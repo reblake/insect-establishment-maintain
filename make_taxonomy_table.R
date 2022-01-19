@@ -6,21 +6,17 @@
 
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(taxize) ; library(rgbif) ; library(purrr)
+library(googledrive)
+
 
 # source the custom functions 
-source("./custom_taxonomy_funcs.R")
-
-
-# checks to see if clean flat files exist, otherwise creates them from multi-worksheet files
-# if(!file.exists("./data/raw_data/seebens_clean.csv")|
-#    !file.exists("./data/raw_data/raw_by_country/New Zealand_Edney_Browne_2018_clean.xlsx")) {
-#            source("./scripts/clean_seebens.R")
-#            source("./scripts/clean_new_zealand.R")
-#            }
+# source("./custom_taxonomy_funcs.R")
+library(insectcleanr)
 
 # List all the raw data files
-file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
-file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
+# file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+file_list <- drive_find()
 
 
 ####################################
