@@ -1,0 +1,231 @@
+---
+title: "README for Insect Invasions Data Tables"
+output: pdf_document
+---
+
+```{r libs, echo=FALSE, message=FALSE}
+# NOTE: Do not Knit this file normally.  Just run the last code chunk to knit a PDF to a different location.  
+
+knitr::opts_chunk$set(comment = NA)
+library(ezknitr); library(rmarkdown); library(taxize); library(dplyr)
+
+in_dir <- "~/insect_invasions/example_code"
+out_dir <- "/nfs/insectinvasions-data/data/clean_data"
+```
+
+# Last update to clean insect data files: 
+```{r dates, echo=FALSE}
+tab_loc <- file.path("/nfs/insectinvasions-data/data/clean_data")
+tables <- dir(tab_loc, pattern = "^[a-z]+_table", full.names=TRUE)
+file.info(tables, extra_cols = FALSE)[,c(1,5)]
+```
+
+## Reason for last update:
+Updates to raw country files and the "fixed" file to correct family names differently assigned by different databases.  Re-ran all `make_XXX_table.R` scripts to update tables.  Added a second taxonomy table, with specific new taxonomy for Coleoptera and Lepidoptera.  Also added more metadata to this README. 
+
+# Taxonomic Database Citations
+```{r citations, echo=FALSE}
+ctime1 <- as.character(file.info(tables, extra_cols = FALSE)[3,c(5)])
+gbif_access_date <- stringr::str_extract(ctime1, "^.{10}")
+access_year <- stringr::str_extract(ctime1, "^.{4}")
+```
+
+### GBIF
+```{r gbif, echo=FALSE, results='asis'}
+cat(paste0("GBIF Secretariat. 2019. GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei accessed via GBIF.org on ",
+           gbif_access_date,"."))
+```
+
+### Other databases
+```{r other_databases, echo=FALSE}
+db_list <- c("Catalogue of Life", "Wikispecies", "ITIS", "NCBI", "The Interim Register of Marine and Nonmarine Genera", "	Encyclopedia of Life",
+             "Aphid Species File", "Index to Organism Names", "uBio NameBank")
+db_info <- subset(gnr_datasources(), title %in% db_list) 
+print.data.frame(db_info %>% select(id, title, updated_at), row.names = FALSE) 
+```
+
+### Database Notes:
+- The GBIF taxonomy does not necessarily use the most up to date `genus_species` name.
+- Other databases may or may not be updated as frequently as GBIF.
+- Errors in taxonomy may still remain, especially for taxonomic groups that change frequently.
+- For **Coleoptera**, Bouchard et al. (2011) was used as the taxonomy system with three exceptions. Dryophthoridae and Brachyceridae were merged into the Curculionidae, Passandridae were 
+merged into the Cucujidae, and Megalopodidae were merged into the Chrysomelidae.
+- For **Lepidoptera**, families were standardized according to van Nieukerken et al. (2011), with updates by Zahiri et al. (2011, 2012, 2013), Kaila et al. (2013), Sohn et al. (2013), Heikkilä et al. (2014), Regier et al. (2014, 2015), Kristensen et al. (2015), and Kaila et al. (2019). We keep Batrachedridae in their pre-Heikkilä et al. (2014) circumscription and follow van Nieukerken et al. (2011), as it is currently not clear where the members of this polyphyletic group will have to be transferred.
+
+# Raw Data Files
+Raw data files are stored on the shared data directory at SESYNC (`/nfs/insectinvasions-data` or [files.sesync.org](files.sesync.org)).  
+
+```{r list files, echo=FALSE}
+dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')
+```
+
+# Cleaning Scripts
+Cleaning scripts are located on SESYNC GitLab in [example_code repository](https://gitlab.sesync.org/insectinvasions/example_code)
+
+- **custom_taxonomy_funcs.R**
+    - stores custom functions used in cleaning insect data
+- **make_taxonomy_table.R**
+    - code to make the clean taxonomy table with GBIF as primary authority (see databases above)
+- **make_occurrence_table.R**
+    - code to make the clean occurrence table with data from raw files
+- **make_attribute_table.R**
+    - code to make the clean attribute table with data from raw files and other sources
+- **make_tax_table_Col_Lep.R**
+    - code to make clean taxonomy table with authorities specific to Coleoptera and Lepidoptera from the literature
+
+# Clean Data Tables
+Tables are stored on the shared data directory at SESYNC (`/nfs/insectinvasions-data` or [files.sesync.org](files.sesync.org)).  
+These data tables are the outputs of the cleaning scripts.  
+
+### taxonomy_table.csv
+  * created by `make_taxonomy_table.R `; 1 unique record per taxa (species, genus, family, etc.) in the raw files
+    + column metadata:
+        - `taxon_id`: unique ID per taxa in the raw files; regenerated each time **make_taxonomy_table.R** is run
+        - `user_supplied_name`: taxa name from the raw files
+        - `status`: status of the match between the `user_supplied_name` and a GBIF taxa; values are "ACCEPTED", "SYNONYM", "DOUBTFUL", or NA (for missing information)
+        - `matchtype`: confidence in the match in the `status` column; values are "FUZZY", "EXACT", or NA (for missing information) 
+        - `usagekey`: GBIF numeric key for the `user_supplied_name`
+        - `rank`: taxonomic rank of the match in GBIF
+        - `synonym`: whether the `user_supplied_name` is a synonym; values are TRUE/FALSE
+        - `acceptedusagekey`: GBIF numeric key for the "ACCEPTED" match to the `user_supplied_name`
+        - `kingdom`: taxonomic kingdom to which taxa belongs
+        - `phylum`: taxonomic phylum to which taxa belongs
+        - `class`: taxonomic class to which taxa belongs
+        - `order`: taxonomic order to which taxa belongs
+        - `family`: taxonomic family to which taxa belongs
+        - `genus`: taxonomic genus to which taxa belongs
+        - `species`: taxonomic species name of taxa
+        - `genus_species`: full genus-species name of taxa according to GBIF
+        - `taxonomy_system`: taxonomy system used to match the `user_supplied_name` (see databases listed above)
+        - `taxonomic_authority`: citation for a taxa (ex: "Patch, 1917")
+          
+### occurrence_table.csv
+  * created by `make_occurrence_table.R`; 1 unique record per region-GBIF taxa combination
+    + column metadata:
+        - `genus_species`: full genus-species name of taxa according to GBIF
+        - `year`: year occurrence was first documented 
+        - `region`: region in which a taxa occurs according to the raw files
+        - `country`: potentially more fine-grained location than in region column
+        - `origin`: origin as listed in the raw files
+        - `host_type`: whether the host was commercial or non-commercial or unknown
+        - `ecozone`: biogeographic designation from raw files
+        - `intentional_release`: whether taxa was intentionally released in a region; values are "No", "Yes", or NA (for missing information)
+        - `established_indoors_or_outdoors`: whether a taxa is established indoors or outdoors; values are "In", "Out", or NA (for missing information)
+        - `confirmed_establishment`: whether the establishment/occurrence is confirmed according to the raw files; values are "Y", "N", or NA (for missing information)
+        - `eradicated`: whether a taxa was eradicated according to the raw files
+        - `present_status`: status of occurrence in a region according to raw files
+          
+### attribute_table.csv
+  * created by `make_attribute_table.R`; 1 unique record per taxa in the raw files
+    + column metadata:
+        - `user_supplied_name`: taxa name from the raw files
+        - `genus_species`: full genus-species name of taxa according to GBIF
+        - ...
+        - `plant_feeding`: whether a taxa is plant-feeding; values are "N" or "Y"
+        - `host_type`: whether the host was commercial or non-commercial or unknown
+        - `host_group`: description of what plant or plant part is the host
+        - `phagy`: description of feeding habits of a taxa
+        - `pest_type`: whether a taxa is a pest and where
+        - `ecozone`: biogeographic designation from raw files
+        - `phagy_main`: phagy designation; values are "Polyphagous", "Monophagous", "Oligophagous", or NA (for missing information)
+        - `feeding_type`: description of how taxa feeds and what it feeds on
+        - `feeding_main`: description of feeding mode of taxa
+        - `notes`: notes on taxa attributes
+
+### attribute_table_gbif.csv
+  * created by `make_attribute_table.R`;  1 unique record per GBIF taxa 
+    + column metadata:
+        - `genus_species`: full genus-species name of taxa according to GBIF
+        - ...
+        - `plant_feeding`: whether a taxa is plant-feeding; values are "N" or "Y"
+        - `host_type`: whether the host was commercial or non-commercial or unknown
+        - `host_group`: description of what plant or plant part is the host
+        - `phagy`: description of feeding habits of a taxa
+        - `pest_type`: whether a taxa is a pest and where
+        - `ecozone`: biogeographic designation from raw files
+        - `phagy_main`: phagy designation; values are "Polyphagous", "Monophagous", "Oligophagous", or NA (for missing information)
+        - `feeding_type`: description of how taxa feeds and what it feeds on
+        - `feeding_main`: description of feeding mode of taxa
+
+### taxonomy_table_cole_lep.csv
+  * created by `make_tax_table_Col_Lep.R`; 1 unique record per taxa in raw files; other authorities used for taxonomy, especially of family names, in the Coleoptera and Lepidoptera
+    + column metadata:
+        - `taxon_id`: unique ID per taxa in the raw files; regenerated each time **make_taxonomy_table.R** is run
+        - `user_supplied_name`: taxa name from the raw files
+        - `status`: status of the match between the `user_supplied_name` and a GBIF taxa; values are "ACCEPTED", "SYNONYM", "DOUBTFUL", or NA (for missing information)
+        - `matchtype`: confidence in the match in the `status` column; values are "FUZZY", "EXACT", or NA (for missing information) 
+        - `usagekey`: GBIF numeric key for the `user_supplied_name`
+        - `rank`: taxonomic rank of the match in GBIF
+        - `synonym`: whether the `user_supplied_name` is a synonym; values are TRUE/FALSE
+        - `acceptedusagekey`: GBIF numeric key for the "ACCEPTED" match to the `user_supplied_name`
+        - `kingdom`: taxonomic kingdom to which taxa belongs
+        - `phylum`: taxonomic phylum to which taxa belongs
+        - `class`: taxonomic class to which taxa belongs
+        - `order`: taxonomic order to which taxa belongs
+        - `family`: taxonomic family to which taxa belongs
+        - `genus`: taxonomic genus to which taxa belongs
+        - `species`: taxonomic species name of taxa
+        - `genus_species`: full genus-species name of taxa according to GBIF
+        - `taxonomy_system`: taxonomy system used to match the `user_supplied_name` (see databases listed above)
+        - `taxonomic_authority`: citation for a taxa (ex: "Patch, 1917")
+
+# Summary of data cleaning/table creation methods
+1. Read in raw data from excel files for each region/country/area of interest using custom `separate_taxonomy()` function.  This function also cleans column names, and largely cleans up inconsistencies in species names.  The output is a dataframe.
+
+2. Make two vectors, one of names to species and one of names to genus.  Individually send these vectors to the GBIF backbone taxonomy via the custom function `get_accepted_taxonomy()` to get the accepted taxonomic names.  
+
+3. Take species names that only matched at genus level and try to get more info from other databases (`r db_info$title`) for those taxa using custom `get_more_info()` function.  Also use this function to try and get info for species not found in GBIF. 
+
+4. Read in CSV (**genus_only_resolution_FIXED.csv**) of manual fixes to species names, and merge this into the info from GBIF and other databases.  
+
+5. Combine all accepted taxonomic names into one dataframe.  Add a new column with a unique id as a key (number for 1 to x).  Write dataframe to CSV file called **taxonomy_table.csv**. 
+
+6. For occurrence table, read in raw data from the raw excel files for each area of interest using the custom `separate_occurrence()` function. This also cleans up country name and origin columns, and largely cleans up inconsistencies in species names.  
+
+7. Join with the taxonomic table to add the unique taxon id column for key.  Write dataframe to CSV file called **occurrence_table.csv**. 
+
+8. For attribute table, read in raw data from excel files for each area of interest using custom `separate_attributes(`) function.  This function cleans up column names, and largely cleans up inconsistencies in species names.   
+
+9. Clean up origin names using regex.  Bring in taxonomic names by joining the taxonomic table (**taxonomy_table.csv**).  
+
+10. Bring in origin correspondence table (**origin_correspondence_table.xlsx**) to unify origin column entries.  Bring in non-plant-feeding info (**non-plant-feeding_taxa_updatedOct07.xlsx**) and join with this info in a new column.  Do a custom coalesce using the `coalesce_manual()` funciton.  Write dataframe to CSV file called **attribute_table.csv**.  
+
+11. Create additional attribute table with GBIF-cleaned taxa names included, and filtered to unique GBIF-cleaned taxa name. Write dataframe to CSV file called **attribute_table_gbif.csv**. 
+
+12. For taxonomy table with different authorities/taxonomies for Coleoptera and Lepidoptera, read in taxonomy table, read in files with fixes from other authorities, and replace family names etc.  Write dataframe to CSV file called **taxonomy_table_col_lep.csv**.
+
+
+# Advice on how to bring tables together
+Taxon IDs are not static, but rather change each time the taxonomy table has to be regenerated.  Therefore, it is advisable to join the taxonomy table to either the occurrence or attribute tables by the `genus_species` column using code such as `new_table <- occurrence_table %>% left_join(taxonomy_table, by = "genus_species")`.    
+
+# Literature Citations
+Bouchard P, Bousquet Y, Davies A, Alonso-Zarazaga M, Lawrence J, Lyal C, Newton A, Reid C, Schmitt M, Slipinski A, Smith A (2011) Family-Group Names In Coleoptera (Insecta). ZooKeys 88: 1-972. https://doi.org/10.3897/zookeys.88.807
+
+van  Nieukerken  E,  Kaila  L,  Kitching  I,  Kristensen  NP,  Lees  D,  Minet  J,  Mitter  J,  Mutanen  M, Regier J, Simonsen T, et al. (2011) Order Lepidoptera Linnaeus, 1758. Zootaxa 3148: 212–221. http://www.mapress.com/zootaxa/2011/f/zt03148p221.pdf
+
+Heikkilä, M., Mutanen, M., Kekkonen, M., & Kaila, L. (2014). Morphology reinforces proposed molecular phylogenetic affinities: a revised classification for Gelechioidea (Lepidoptera). Cladistics, 30(6), 563–589. https://doi.org/10.1111/cla.12064
+
+Kaila, L., Epstein, M. E., Heikkila, M., & Mutanen, M. (2013). The assignment of Prodidactidae to Hyblaeoidea, with remarks on Thyridoidea (Lepidoptera). Zootaxa, 3682(3), 485–494. http://dx.doi.org/10.11646/zootaxa.3682.3.9
+
+Kaila, L., Nupponen, K., Gorbunov, P. Y., Mutanen, M., & Heikkila, M. (2019). Ustyurtiidae, a new family of Urodoidea with description of a new genus and two species from Kazakhstan, and discussion on possible affinity of Urodoidea to Schreckensteinioidea (Lepidoptera). Insect Systematics & Evolution, 51 (2020), 444–471. https://doi.org//10.1163/1876312X-00002209
+
+Kristensen, N. P., Hilton, D. J., Kallies, A., Milla, L., Rota, J., Wahlberg, N., Halsey, M. (2015). A new extant family of primitive moths from Kangaroo Island, Australia, and its significance for understanding early Lepidoptera evolution. Systematic Entomology, 40, 5–16. https://doi.org/10.1111/syen.12115
+
+Regier, J., Mitter, C., Davis, D. R., Harrison, T. L., Sohn, J.C., Cummings, M. P., Mitter, K. T. (2014). A molecular phylogeny and revised classification for the oldest ditrysian moth lineages (Lepidoptera: Tineoidea), with implications for ancestral feeding habits of the mega-diverse Ditrysia. Systematic Entomology, 40(2), 409–432. https://doi.org/10.1111/syen.12110
+
+Regier, G. C., Mitter, C., Kristensen, N. P., Davis, D. R., van Nieukerken, E. J., Rota, J., … Zwick, A. (2015). A molecular phylogeny for the oldest (nonditrysian) lineages of extant Lepidoptera, with implications for classification, comparative morphology and life-history evolution. Systematic Entomology, 40, 671–704. https://doi.org/10.1111/syen.12129
+
+Sohn, J.-C., Regier, J. C., Mitter, C., Davis, D., Landry, J.-F., Zwick, A., & Cummings, M. P. (2013). A molecular phylogeny for Yponomeutoidea (Insecta, Lepidoptera, Ditrysia) and its implications for classification, biogeography and the evolution of host plant use. PLoS ONE, 8(1), e55066. https://doi.org/10.1371/journal.pone.0055066
+
+Zahiri, R., Holloway, J. D., Kitching, I. J., Lafontaine, J. D., Mutanen, M., & Wahlberg, N. (2011). Molecular phylogenetics of Erebidae (Lepidoptera, Noctuoidea). Systematic Entomology, 37, 102–124. https://doi.org/10.1111/j.1365-3113.2011.00607.x
+
+Zahiri, R., Lafontaine, J. D., Holloway, J. D., Kitching, I. J., Schmidt, B. C., Kaila, L., & Wahlberg, N. (2012). Major lineages of Nolidae (Lepidoptera, Noctuoidea) elucidated by molecular phylogenetics. Cladistics, 29, 337–359. https://doi.org/10.1111/cla.12001
+
+Zahiri, R., Lafontaine, D., Schmidt, C., Holloway, J. D., Kitching, I. J., Mutanen, M., & Wahlberg, N. (2013). Relationships among the basal lineages of Noctuidae (Lepidoptera, Noctuoidea) based on eight gene regions. Zoologica Scripta, 42(5), 488–507. https://doi.org/10.1111/zsc.12022
+
+```{r knit, echo=FALSE, message=FALSE, error=FALSE, eval=FALSE, include=FALSE}
+ezknit(file = paste0(in_dir, "/Taxonomy_Cleaning_README.Rmd"), out_dir = out_dir, keep_html = FALSE)
+
+render(paste0(out_dir, "/Taxonomy_Cleaning_README.md"), output_format = "pdf_document")
+```
+
