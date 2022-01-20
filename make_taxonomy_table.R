@@ -6,25 +6,36 @@
 
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(taxize) ; library(rgbif) ; library(purrr)
-library(googledrive)
+library(here)
+library(googledrive) # authenticate to the Google account which can access the shared team drive
 
-
+####################################
 # source the custom functions 
 # source("./custom_taxonomy_funcs.R")
 library(insectcleanr)
 
-# List all the raw data files
+####################################
+# List all the raw data files 
+# Raw data files on Google Drive Shared Drive called "SESYNC Insect Invasions"
+####################################
 # file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
 # file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
-file_list <- drive_find()
-
+# store the folder url 
+folder_url <- "https://drive.google.com/drive/folders/1WD7yqnmKEJc8PK-lNmwHniEuwl-xqIby"
+# identify this folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
+folder <- drive_get(as_id(folder_url))
+# identify the csv files in that folder
+file_list <- drive_ls(folder, type = "csv")
+# download them all to working directory
+walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
+# make list of files that are now in local working directory
+file_listp <- dir(path = here(), pattern = "*.csv")
 
 ####################################
 ### Making the taxonomic table   ###
 ####################################
-
 # apply the separate_taxonomy function over the list of dataframes
-tax_list <- lapply(file_listp, separate_taxonomy) 
+tax_list <- lapply(file_listp, separate_taxonomy_csv) 
 
 # put all taxonomy dataframes into one large dataframe
 tax_df <- tax_list %>% 
@@ -32,7 +43,7 @@ tax_df <- tax_list %>%
           mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% 
           dplyr::rename(taxonomic_authority = authority) %>% 
           dplyr::arrange(genus_species) %>% 
-          dplyr::filter(!(genus_species == "Baridinae gen"))
+          dplyr::filter(!(genus_species == "Baridinae gen")) %>% 
 
 # define what taxonomic columns might be named        
 tax_class <- c("kingdom", "phylum", "class", "order", "family", "super_family",
@@ -40,21 +51,10 @@ tax_class <- c("kingdom", "phylum", "class", "order", "family", "super_family",
 
 
 #####################################
-### Make large table with all info
-
-# also correct mis-spellings of certain species based on expert review by A. Liebhold
-# misspell <- read_csv("./data/raw_data/taxonomic_reference/misspelling_SAL_resolved.csv", trim_ws = TRUE)
-
+### Make large table into vector of all taxa names
 tax_df1 <- tax_df %>% 
-           mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% 
            mutate_at(vars(genus_species), str_squish) %>% 
            mutate(user_supplied_name = genus_species) %>% 
-           # full_join(misspell, by = "user_supplied_name") %>% 
-           # transmute(phylum, class, order, family, super_family, user_supplied_name, 
-           #           genus_species = ifelse(!is.na(genus_species.y), genus_species.y, genus_species.x ),
-           #           genus = word(genus_species, 1),
-           #           species = word(genus_species, 2),
-           #           taxonomy_system, taxonomic_authority) %>% 
            distinct(genus_species) %>%  # remove species duplicates          
            dplyr::arrange(genus_species) # arrange alphabetically
   
@@ -62,14 +62,11 @@ tax_df1 <- tax_df %>%
 #####################################
 ### Make vectors of genus names (no species info) and species names
 # make character vector of names only to genus
-# g_sp <- grep('\\<sp\\>', tax_df1$genus_species, value=TRUE) 
-# g_spp <- grep('\\<sp.\\>', tax_df1$genus_species, value=TRUE)
 g_sp <- filter(tax_df1, (str_count(genus_species, " ") + 1) == 1)
-# bard <- grep('\\<gen\\>', tax_df1$genus_species, value=TRUE) # include sub-family here   
+
 tax_vec_gn <- unlist(g_sp, use.names = FALSE) %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
               magrittr::extract(!(. == "Tasconotus")) # remove this species
 
-              
 
 # makes character vector of names only to species 
 tax_vec_sp <- tax_df1 %>% 
@@ -78,7 +75,6 @@ tax_vec_sp <- tax_df1 %>%
               # magrittr::extract(!(. %in% g_spp)) %>% 
               unlist(., use.names = FALSE) %>% 
               magrittr::extract(!(. == "Baridinae")) # this family put with genus above
-
 
 #####################################
 ### Get taxonomy info from GBIF   ###
@@ -89,7 +85,6 @@ xtra_cols <- c("kingdomkey", "phylumkey", "classkey", "orderkey", "specieskey",
 ######################
 # apply the get_accepted_taxonomy function over the vector of species names
 tax_acc_l <- lapply(tax_vec_sp, get_accepted_taxonomy) 
-
 
 # make dataframe of all results
 suppressMessages(
@@ -103,7 +98,6 @@ tax_acc <- tax_acc_l %>%
 # apply the get_accepted_taxonomy function over the vector of genus names
 gn_acc_l <- lapply(tax_vec_gn, get_accepted_taxonomy) 
 
-
 # make dataframe of all results
 suppressMessages(
 gen_acc <- gn_acc_l %>% 
@@ -111,7 +105,6 @@ gen_acc <- gn_acc_l %>%
            mutate(genus_species = str_squish(genus_species)) %>% 
            select(-one_of(xtra_cols))
 )
-
 
 
 ######################
@@ -223,9 +216,17 @@ genus_matches <- no_lower_genus %>%
                  mutate(genus = matched_name2) %>% 
                  dplyr::rename(genus_species = matched_name2)
 
+#############################
 # bring in manual corrections 
-sal_taxa <- read_csv("nfs_data/data/raw_data/taxonomic_reference/genus_only_resolution_FIXED.csv", trim_ws = TRUE,
-                     col_types = cols(up_to_date_name = col_character())) 
+# identify the folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
+fix_folder <- drive_get(as_id("https://drive.google.com/drive/folders/1t0W54RR-rpEvEYRBzas7Szz1ApM3DxzF"))
+# identify the FIXED file in that folder
+file_info <- drive_ls(fix_folder, pattern = "FIXED")
+# download FIXED file to working directory
+drive_download(as_id(file_info$id), overwrite = TRUE)
+
+sal_taxa <- read_csv(here("genus_only_resolution_FIXED.csv"), trim_ws = TRUE,
+                     col_types = cols(up_to_date_name = col_character()))
 
 # add manual corrections to correct genus-level only matches
 genus_match_SAL <- genus_matches %>% 
@@ -255,7 +256,6 @@ man_correct_remain <- subset(sal_taxa, !(user_supplied_name %in% manually_matche
 
 ########
 # put together dataframes with new info
-
 new_sp_info <- tax_nf %>% 
                full_join(tax_go) %>% 
                dplyr::left_join(select(genus_only, user_supplied_name, kingdom,   # this and the transmute adds back in the higher rank info
@@ -269,18 +269,12 @@ new_sp_info <- tax_nf %>%
                       phylum = ifelse(is.na(phylum), "Arthropoda", phylum),
                       class = ifelse(is.na(class), "Insecta", class))
 
-########
-# bring in new non-plant-feeding Australian taxa from Helen
-# Sept 2020, Rebecca said that all these npf taxa have been incorporated into the raw Australian file
-# new_npf_aus <- read_csv("nfs_data/data/clean_data/new_Aussie_npf_taxa.csv", trim_ws = TRUE, col_types = "cnccccccccccccccn")
-
-               
+              
 #######################################################################
 ### Combine species list and GBIF accepted names                    ###
 #######################################################################
 tax_combo <- dplyr::filter(tax_acc, rank %in% c("species", "subspecies")) %>% # GBIF matches to species rank  
              full_join(gen_acc) %>%  # df of taxa where user supplied name was genus only to start with
-             # full_join(new_npf_aus) %>%  # df of new non-plant-feeding Australian taxa from Helen
              full_join(new_sp_info, by = "user_supplied_name") %>%  # bind in the new info from auto and manual resolution
              transmute(user_supplied_name,  
                        rank = ifelse(is.na(rank.y), rank.x, rank.y),
@@ -349,9 +343,6 @@ tax_final <- tax_combo %>%
 ### Write file                    ###
 #####################################
 # write the clean taxonomy table to a CSV file
-readr::write_csv(tax_final, "nfs_data/data/clean_data/taxonomy_table.csv")
-
-
-
+readr::write_csv(tax_final, paste0(here(), "/taxonomy_table_", Sys.Date(), ".csv"))
 
 
