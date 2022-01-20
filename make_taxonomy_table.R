@@ -42,8 +42,8 @@ tax_df <- tax_list %>%
           purrr::reduce(full_join) %>%  
           mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% 
           dplyr::rename(taxonomic_authority = authority) %>% 
-          dplyr::arrange(genus_species) %>% 
-          dplyr::filter(!(genus_species == "Baridinae gen")) %>% 
+          dplyr::arrange(genus_species) #%>% 
+         # dplyr::filter(!(genus_species == "Baridinae gen")) 
 
 # define what taxonomic columns might be named        
 tax_class <- c("kingdom", "phylum", "class", "order", "family", "super_family",
@@ -64,7 +64,7 @@ tax_df1 <- tax_df %>%
 # make character vector of names only to genus
 g_sp <- filter(tax_df1, (str_count(genus_species, " ") + 1) == 1)
 
-tax_vec_gn <- unlist(g_sp, use.names = FALSE) %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
+tax_vec_gn <- unlist(g_sp, use.names = FALSE)# %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
               magrittr::extract(!(. == "Tasconotus")) # remove this species
 
 
@@ -73,8 +73,8 @@ tax_vec_sp <- tax_df1 %>%
               filter(!(genus_species %in% g_sp$genus_species))  %>% 
               # magrittr::extract(!(. %in% g_sp)) %>% 
               # magrittr::extract(!(. %in% g_spp)) %>% 
-              unlist(., use.names = FALSE) %>% 
-              magrittr::extract(!(. == "Baridinae")) # this family put with genus above
+              unlist(., use.names = FALSE)# %>% 
+            #  magrittr::extract(!(. == "Baridinae")) # this family put with genus above
 
 #####################################
 ### Get taxonomy info from GBIF   ###
