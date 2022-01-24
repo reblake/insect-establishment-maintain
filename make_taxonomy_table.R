@@ -29,7 +29,8 @@ file_list <- drive_ls(folder, type = "csv")
 # download them all to working directory
 walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
 # make list of files that are now in local working directory
-file_listp <- dir(path = here(), pattern = "*.csv")
+file_csv <- dir(path = here(), pattern = "*.csv")
+file_listp <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
 
 ####################################
 ### Making the taxonomic table   ###
@@ -41,6 +42,8 @@ tax_list <- lapply(file_listp, separate_taxonomy_csv)
 tax_df <- tax_list %>% 
           purrr::reduce(full_join) %>%  
           mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% 
+          mutate(authority = ifelse(is.na(authority), taxonomic_authority, authority)) %>% 
+          dplyr::select(-taxonomic_authority) %>% 
           dplyr::rename(taxonomic_authority = authority) %>% 
           dplyr::arrange(genus_species) #%>% 
          # dplyr::filter(!(genus_species == "Baridinae gen")) 
@@ -55,6 +58,7 @@ tax_class <- c("kingdom", "phylum", "class", "order", "family", "super_family",
 tax_df1 <- tax_df %>% 
            mutate_at(vars(genus_species), str_squish) %>% 
            mutate(user_supplied_name = genus_species) %>% 
+           dplyr::filter(!genus_species == "") %>%  # remove blank entries
            distinct(genus_species) %>%  # remove species duplicates          
            dplyr::arrange(genus_species) # arrange alphabetically
   
