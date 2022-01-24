@@ -5,21 +5,36 @@
 ####################################################################
 
 # Load packages needed for this script
-library(tidyverse) ; library(readxl) ; library(purrr) ; library(DescTools)
+library(tidyverse) ; library(readxl) ; library(purrr) ; library(DescTools) ; library(here)
+library(googledrive) # authenticate to the Google account which can access the shared team drive
+
 
 # source the custom functions if they aren't in your R environment
 # source("nfs_data/custom_taxonomy_funcs.R")
+library(insectcleanr)
 
 # List all the data files
-file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
-file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
+# file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# store the folder url 
+folder_url <- "https://drive.google.com/drive/folders/1WD7yqnmKEJc8PK-lNmwHniEuwl-xqIby"
+# identify this folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
+folder <- drive_get(as_id(folder_url))
+# identify the csv files in that folder
+file_list <- drive_ls(folder, type = "csv")
+# download them all to working directory
+walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
+# make list of files that are now in local working directory
+file_csv <- dir(path = here(), pattern = "*.csv")
+file_listp <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
+
 
 #####################################
 ### Making the attribute table    ###
 #####################################
 
 # apply that function over the list of dataframes
-attrib_list <- lapply(file_listp, separate_attributes) 
+attrib_list <- lapply(file_listp, separate_attributes_csv) 
 
 df_attrib <- attrib_list %>% 
              purrr::reduce(full_join) %>% 
@@ -65,17 +80,29 @@ df_attrib <- attrib_list %>%
                                                                     # must join the attribute table with the taxonomy table!!!
 
 # bring in taxonomic table for order, family, and genus columns
-tax_table <- read_csv("nfs_data/data/clean_data/taxonomy_table.csv")
+tax_table <- read.csv(here("taxonomy_table.csv"), stringsAsFactors=F)
 tax_cols <- tax_table %>% select(taxon_id, user_supplied_name, order, family, genus, genus_species)
 
-# origin_correspondence_table.xlsx for the 8 biogeographic regions
-o_corr_file <- read_excel("nfs_data/data/raw_data/taxonomic_reference/origin_correspondence_table.xlsx", 
-                           trim_ws = TRUE, col_types = "text") 
+# origin_correspondence_table.csv for the 8 biogeographic regions
+# identify the folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
+fix_folder <- drive_get(as_id("https://drive.google.com/drive/folders/1t0W54RR-rpEvEYRBzas7Szz1ApM3DxzF"))
+# identify the origin_correspondence file in that folder
+file_info <- drive_ls(fix_folder, pattern = "origin_correspondence")
+# download origin_correspondence file to working directory
+drive_download(as_id(file_info$id), overwrite = TRUE)
+# now read the file into R from the working directory
+o_corr_file <- read.csv(here("origin_correspondence_table.csv"), strip.white = TRUE) 
+
 o_corr_table <- o_corr_file %>% 
                 mutate_at(vars(starts_with("origin_")), list(~ replace(., . %in% c("NA"), NA_character_)))
 
 # plant feeding attribute column from the non-plant-feeding_taxa file
-npf_file <- "nfs_data/data/raw_data/taxonomic_reference/non-plant-feeding_taxa_updatedOct07.xlsx"
+# identify the non-plant-feeding file in that folder
+file_info <- drive_ls(fix_folder, pattern = "non-plant-feeding")
+# download non-plant-feeding file to working directory
+drive_download(as_id(file_info$id), overwrite = TRUE)
+# read the downloaded file into R
+npf_file <- here("non-plant-feeding_taxa_updatedOct07.xlsx")
 npf_ord <- read_excel(npf_file, sheet = 2, trim_ws = TRUE, col_types = "text")
 npf_fams <- read_excel(npf_file, sheet = 3, trim_ws = TRUE, col_types = "text")
 npf_gen <- read_excel(npf_file, sheet = 4, trim_ws = TRUE, col_types = "text")
@@ -136,8 +163,8 @@ df_attrib_o <- df_attrib %>%
 ### Write file                    ###
 #####################################
 # write out the attribute table
-readr::write_csv(df_attrib_o, "nfs_data/data/clean_data/attribute_table.csv")
-
+readr::write_csv(df_attrib_o, paste0(here(), "/attribute_table_", Sys.Date(), ".csv"))
+                             
 
 ########################################################################
 ### Code to filter to unique GBIF genus_species, and do manual coalesce using new custom function
@@ -192,7 +219,7 @@ df_attrib_gbif <- df_attrib %>%
 ### Write another file            ###
 #####################################
 # write out the attribute table
-readr::write_csv(df_attrib_gbif, "nfs_data/data/clean_data/attribute_table_gbif.csv")
+readr::write_csv(df_attrib_gbif, paste0(here(), "/attribute_table_gbif_", Sys.Date(), ".csv"))
 
 
 
