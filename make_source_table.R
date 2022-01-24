@@ -2,19 +2,32 @@
 ##### Insect Invasions Pursuit @ SESYNC                        #####
 ##### Example script to create clean source table              #####
 ##### created by Rebecca Turner 21/01/2022                     #####
-##### based on make_occurence_table by Rachael Blake           #####
+##### based on make_occurrence_table by Rachael Blake           #####
 ####################################################################
 
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(purrr) ; library(countrycode) ; library(DescTools)
+library(here)
+library(googledrive) # authenticate to the Google account which can access the shared team drive
 
 # source the custom functions if they aren't in your R environment
-#source("nfs_data/custom_taxonomy_funcs.R")
-
+# source("nfs_data/custom_taxonomy_funcs.R")
+library(insectcleanr)
 
 # List all the data files # RT 21/01/22 this needs to be edited right?
-file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
-file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
+# file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# store the folder url 
+folder_url <- "https://drive.google.com/drive/folders/1WD7yqnmKEJc8PK-lNmwHniEuwl-xqIby"
+# identify this folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
+folder <- drive_get(as_id(folder_url))
+# identify the csv files in that folder
+file_list <- drive_ls(folder, type = "csv")
+# download them all to working directory
+walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
+# make list of files that are now in local working directory
+file_csv <- dir(path = here(), pattern = "*.csv")
+file_listp <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
 
 
 #####################################
@@ -54,21 +67,21 @@ tax_table <- read.csv("nfs_data/data/clean_data/taxonomy_table.csv", stringsAsFa
 
 # make final source dataframe
 source_df <- df_source %>%
-  mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl = TRUE)) %>%  # remove rogue white spaces
-  dplyr::rename(user_supplied_name = genus_species) %>% # have to rename genus_species to user_supplied_name so matches are correct
-  dplyr::right_join(y = select(tax_table, c(user_supplied_name, genus_species,family, order,rank)), # RT changed to right join - should have all source rows
-                   by = "user_supplied_name") %>% # join in the taxonomy info
-  mutate(genus_species = gsub("<a0>", " ", genus_species, perl=TRUE)) %>% 
-  select(user_supplied_name, genus_species, family, order,rank, year, region, 
-         intentional_release, established_indoors_or_outdoors, 
-         eradicated,source
-  ) %>% # make user_supplied_name column the first column; arrange other columns
-  dplyr::arrange(user_supplied_name) # order by user_supplied_name
+             mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl = TRUE)) %>%  # remove rogue white spaces
+             dplyr::rename(user_supplied_name = genus_species) %>% # have to rename genus_species to user_supplied_name so matches are correct
+             dplyr::right_join(y = select(tax_table, c(user_supplied_name, genus_species,family, order,rank)), # RT changed to right join - should have all source rows
+                               by = "user_supplied_name") %>% # join in the taxonomy info
+             mutate(genus_species = gsub("<a0>", " ", genus_species, perl=TRUE)) %>% 
+             select(user_supplied_name, genus_species, family, order,rank, year, region, 
+                    intentional_release, established_indoors_or_outdoors, 
+                    eradicated,source
+                    ) %>% # make user_supplied_name column the first column; arrange other columns
+             dplyr::arrange(user_supplied_name) # order by user_supplied_name
 
 
 source_df2 <- source_df %>% 
-  # remove ">" and other characters from year column
-  mutate(year = gsub("\\D", "", year, perl = TRUE))
+              # remove ">" and other characters from year column
+              mutate(year = gsub("\\D", "", year, perl = TRUE))
 
 ##### NOTE: there were no cases where there were different entries for intentional release in a
 ##### given genus_species/region combo
@@ -78,7 +91,7 @@ source_df2 <- source_df %>%
 ### Write file                    ###
 #####################################
 # write the clean occurrence table to a CSV file
-readr::write_csv(source_df2, "nfs_data/data/clean_data/source_table.csv") # need to change route
+readr::write_csv(source_df2, paste0(here(), "/source_table_", Sys.Date(), ".csv")) # need to change route
 
 
 
