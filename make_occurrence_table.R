@@ -49,28 +49,28 @@ df_occurr <- occurr_list %>%
              mutate(country = '',
                     present_status = '') %>% 
              # fill in country column with canada_or_us info
-             mutate(# country = ifelse(is.na(country) & canada_or_us %in% c("Canada", "Us", "Us, may not actually be adventive"), 
-                    #                  canada_or_us, country),
+             mutate(country = ifelse(is.na(country) & canada_or_us %in% c("Canada", "Us", "Us, may not actually be adventive"), 
+                                     canada_or_us, country),
                     present_status = ifelse(present_status == "Na", NA, present_status),
                     notes = ifelse(country == "Us, may not actually be adventive", "may not actually be adventive", ""),
-                    country = ifelse(country == "Us, may not actually be adventive", "Us", country)# ,
-                    # notes = ifelse(origin == "New insect record for 1960  purposeful introduction", 
-                    #                "New insect record for 1960  purposeful introduction", ""),
-                    # origin = ifelse(origin == "New insect record for 1960  purposeful introduction",
-                    #                 "", origin),
-                    # notes = ifelse(origin == "New insect record for 1963, chance immigrant", 
-                    #                "New insect record for 1963, chance immigrant", ""),
-                    # origin = ifelse(origin == "New insect record for 1963, chance immigrant",
-                    #                 "", origin)
+                    country = ifelse(country == "Us, may not actually be adventive", "Us", country) ,
+                    notes = ifelse(origin == "New insect record for 1960  purposeful introduction", 
+                                  "New insect record for 1960  purposeful introduction", ""),
+                    origin = ifelse(origin == "New insect record for 1960  purposeful introduction",
+                                   "", origin),
+                    notes = ifelse(origin == "New insect record for 1963, chance immigrant", 
+                                  "New insect record for 1963, chance immigrant", ""),
+                    origin = ifelse(origin == "New insect record for 1963, chance immigrant",
+                                   "", origin)
                     ) %>% 
              # clean up/fill in country column
-             mutate(# year = ifelse(year == -999, NA, year),
-                    # country = ifelse(region %in% c("Okinawa", "Ogasawara", "Japan"), "Japan", country),
-                    # country = ifelse(region == "Hawaii", "Us", country),
-                    # country = ifelse(region == "Korea", "Korea", country),
-                    # country = ifelse(region == "New Zealand", "New Zealand", country)# ,
-                    # notes = ifelse(grepl("Proceedings of the", .$origin), origin, notes),
-                    # origin = ifelse(grepl("Proceedings of the", .$origin), "", origin)
+             mutate(year = ifelse(year == -999, NA, year),
+                    country = ifelse(region %in% c("Okinawa", "Ogasawara", "Japan"), "Japan", country),
+                    country = ifelse(region == "Hawaii", "Us", country),
+                    country = ifelse(region == "Korea", "Korea", country),
+                    country = ifelse(region == "New Zealand", "New Zealand", country) ,
+                    notes = ifelse(grepl("Proceedings of the", .$origin), origin, notes),
+                    origin = ifelse(grepl("Proceedings of the", .$origin), "", origin)
                     ) %>% 
              # clean up some species names
              mutate(genus_species = gsub("Mycetophila\xa0propria", "Mycetophila propria", genus_species),
@@ -78,27 +78,27 @@ df_occurr <- occurr_list %>%
                     genus_species = gsub("Mycetophila\xa0marginepunctata", "Mycetophila marginepunctata", genus_species),
                     ) %>%         
              # clean up year column
-             # mutate(year = ifelse(year %in% c("N/A", "Na"), NA_character_, year),
-             #        year = gsub("\\s", "", year, perl=TRUE)) %>% 
+             mutate(year = ifelse(year %in% c("N/A", "Na"), NA_character_, year),
+                    year = gsub("\\s", "", year, perl=TRUE)) %>% 
              # clean up eradicated
-             # mutate(eradicated = ifelse(eradicated %in% c("Na"), NA_character_, eradicated),
-             #        eradicated = ifelse(intentional_release == "Eradicated", "Yes", eradicated)) %>% 
+             mutate(eradicated = ifelse(eradicated %in% c("Na"), NA_character_, eradicated),
+                    eradicated = ifelse(intentional_release == "Eradicated", "Yes", eradicated)) %>% 
              # clean up intentional release column
-             # mutate(intentional_release = ifelse(intentional_release %in% c("N", "Eradicated"), "No", 
-             #                              ifelse(intentional_release %in% c("1", "I", "Y"), "Yes", intentional_release))) %>% 
-             # mutate(intentional_release = ifelse(intentional_release %in% c("Na"), NA_character_, intentional_release)) %>% 
+             mutate(intentional_release = ifelse(intentional_release %in% c("N", "Eradicated"), "No", 
+                                          ifelse(intentional_release %in% c("1", "I", "Y"), "Yes", intentional_release))) %>% 
+             mutate(intentional_release = ifelse(intentional_release %in% c("Na"), NA_character_, intentional_release)) %>% 
              # clean up ecozone
-             # mutate(ecozone = ifelse(ecozone %in% c("Na"), NA_character_, ecozone)) %>% 
+             mutate(ecozone = ifelse(ecozone %in% c("Na"), NA_character_, ecozone)) %>% 
              # clean up origin column
-             # mutate(origin = ifelse(origin %in% c("Na"), NA_character_, origin)) %>%
+             mutate(origin = ifelse(origin %in% c("Na"), NA_character_, origin)) %>%
              # clean up confirmed establishment
-             # mutate(confirmed_establishment = ifelse(confirmed_establishment %in% c("Na"), NA_character_, confirmed_establishment)) %>% 
+             mutate(confirmed_establishment = ifelse(confirmed_establishment %in% c("Na"), NA_character_, confirmed_establishment)) %>% 
              # clean up host type
-             # mutate(host_type = str_to_lower(host_type)) %>% 
+             mutate(host_type = str_to_lower(host_type)) %>% 
              # add country codes for country and origin columns
-             mutate(country_code = countrycode(country, "country.name", "iso3n", warn = TRUE)# ,
-                    # origin_code = countrycode(origin, "country.name", "iso3n", warn = TRUE)
-                    ) %>% 
+             # mutate(country_code = countrycode(country, "country.name", "iso3n", warn = TRUE),
+             #        origin_code = countrycode(origin, "country.name", "iso3n", warn = TRUE)
+             #        ) %>% 
              mutate(genus_species = gsub("\xa0", " ", genus_species , perl=TRUE)) %>% # trying to get rid of weird characters
              # dplyr::select(-canada_or_us, -nz_region) %>% 
              dplyr::arrange(genus_species) 
