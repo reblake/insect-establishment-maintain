@@ -78,8 +78,8 @@ tax_df1 <- tax_df %>%
 # make character vector of names only to genus
 g_sp <- filter(tax_df1, (str_count(genus_species, " ") + 1) == 1)
 
-tax_vec_gn <- unlist(g_sp, use.names = FALSE) %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
-              magrittr::extract(!(. == "Tasconotus")) # remove this species
+tax_vec_gn <- unlist(g_sp, use.names = FALSE) # %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
+              # magrittr::extract(!(. == "Tasconotus")) # remove this species
 
 
 # makes character vector of names only to species 
