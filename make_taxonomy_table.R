@@ -26,12 +26,21 @@ folder_url <- "https://drive.google.com/drive/folders/1WD7yqnmKEJc8PK-lNmwHniEuw
 folder <- drive_get(as_id(folder_url))
 # identify the csv files in that folder
 file_list <- drive_ls(folder, type = "csv")
-# download them all to working directory
-walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
-# make list of files that are now in local working directory
-file_csv <- dir(path = here(), pattern = "*.csv")
-file_listp1 <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
-file_listp <- file_listp1[!file_listp1 %in% grep("origin_corr*", file_listp1, value = TRUE)]
+# create new empty directory in working directory
+if (file.exists("raw_data_files")) {cat("The folder already exists.")
+} else {
+dir.create(file.path(here(), "raw_data_files"))
+}
+# make vector of file destination full paths
+dest_paths <- paste0(here(), "/raw_data_files/", file_list$name)
+# download them all to directory
+walk2(file_list$id, dest_paths, ~ drive_download(as_id(.x), overwrite = TRUE, 
+                                                 path = .y))
+# make list of files to send to the functions below
+file_listp <- paste0("./raw_data_files/", file_list$name)
+# file_listp1 <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
+# file_listp <- file_listp1[!file_listp1 %in% grep("origin_corr*", file_listp1, value = TRUE)]           
+
 
 ####################################
 ### Making the taxonomic table   ###
@@ -43,8 +52,8 @@ tax_list <- lapply(file_listp, separate_taxonomy_csv)
 tax_df <- tax_list %>% 
           purrr::reduce(full_join) %>%  
           mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% 
-          mutate(authority = ifelse(is.na(authority), taxonomic_authority, authority)) %>% 
-          dplyr::select(-taxonomic_authority) %>% 
+          # mutate(authority = ifelse(is.na(authority), taxonomic_authority, authority)) %>% 
+          # dplyr::select(-taxonomic_authority) %>% 
           dplyr::rename(taxonomic_authority = authority) %>% 
           dplyr::arrange(genus_species) #%>% 
          # dplyr::filter(!(genus_species == "Baridinae gen")) 
@@ -69,7 +78,7 @@ tax_df1 <- tax_df %>%
 # make character vector of names only to genus
 g_sp <- filter(tax_df1, (str_count(genus_species, " ") + 1) == 1)
 
-tax_vec_gn <- unlist(g_sp, use.names = FALSE)# %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
+tax_vec_gn <- unlist(g_sp, use.names = FALSE) %>%  # gsub(" [a-zA-Z0-9]*", "", .) %>%
               magrittr::extract(!(. == "Tasconotus")) # remove this species
 
 
@@ -331,9 +340,7 @@ tax_final <- tax_combo %>%
                     genus_species = ifelse(genus_species == "species not found", NA_character_, genus_species)) %>% 
              mutate(genus = ifelse(is.na(genus), word(genus_species, 1), genus),
                     species = ifelse(is.na(species), genus_species, species)) %>% 
-             arrange(user_supplied_name) %>% 
-             # add the unique ID column after all unique species are in one dataframe
-             tibble::rowid_to_column("taxon_id")
+             arrange(user_supplied_name) 
 
 # duplicates
 # dups <- tax_final %>% group_by(user_supplied_name) %>% filter(n()>1)
