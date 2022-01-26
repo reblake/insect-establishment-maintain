@@ -30,7 +30,8 @@ file_list <- drive_ls(folder, type = "csv")
 walk(file_list$id, ~ drive_download(as_id(.x), overwrite = TRUE))
 # make list of files that are now in local working directory
 file_csv <- dir(path = here(), pattern = "*.csv")
-file_listp <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
+file_listp1 <- file_csv[!file_csv %in% grep("*FIXED.csv", file_csv, value = TRUE)]
+file_listp <- file_listp1[!file_listp1 %in% grep("origin_corr*", file_listp1, value = TRUE)]
 
 ####################################
 ### Making the taxonomic table   ###
