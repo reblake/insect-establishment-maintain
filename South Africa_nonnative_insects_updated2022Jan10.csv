@@ -1,0 +1,375 @@
+order,family,genus,species,Common.name,Origin,Habitat,year,genus_species,source,Intentional_Release
+Thysanura,Lepismatidae,Ctenolepisma,longicaudata,Grey silverfish,Caribbean,T,< 1900,Ctenolepisma longicaudata,"Picker, 2017",No
+Thysanura,Lepismatidae,Ctenolepisma,urbana,Urban silverfish,Probably USA,T,-,Ctenolepisma urbana,"Picker, 2017",No
+Thysanura,Lepismatidae,Lepisma,saccharina,Silverfish,Unknown,T,-,Lepisma saccharina,"Picker, 2017",No
+Thysanura,Blattellidae,Blattella,germanica,German cockroach,South East Asia,T,-,Blattella germanica,"Picker, 2017",No
+Blattodea,Blattidae,Periplaneta,americana,American cockroach,Tropical Africa,T,-,Periplaneta americana,"Picker, 2017",No
+Blattodea,Blattidae,Blatta,orientalis,Oriental cockroach,Unknown,T,-,Blatta orientalis,"Picker, 2017",No
+Blattodea,Kalotermitidae,Cryptotermes,brevis,House termite,West Indies,T,1918,Cryptotermes brevis,"Picker, 2017",No
+Isoptera,Rhinotermitidae,Coptotermes,formosanus,Formosan termite,"China, Japan",T,1924,Coptotermes formosanus,"Picker, 2017",No
+Isoptera,Anisolabididae,Euborellia,annulipes,Ring-legged earwig,Southern Europe,T,1912,Euborellia annulipes,"Picker, 2017",No
+Dermaptera,Labiduridae,Labidura,riparia,Sand earwig,Siberia,T,1863,Labidura riparia,"Picker, 2017",No
+Dermaptera,Labiduridae,Nala,lividipes,Black field earwig,South East Asia,T,1900,Nala lividipes,"Picker, 2017",No
+Dermaptera,Spongiphoridae,Labia,minor,Lesser earwig,"Palaearctic Europe, Northern Africa",T,1900,Labia minor,"Picker, 2017",No
+Phasmatodea,Phasmatidae,Carausius,morosus,Indian stick insect,India,T,-,Carausius morosus,"Picker, 2017",No
+Embioptera,Oligotomidae,Oligotoma,saundersii,Saunders embiid,India,T,-,Oligotoma saundersii,"Picker, 2017",No
+Psocoptera,Liposcelidae,Liposcelis,bostrychophila,Domestic booklouse,Probably Tropical Africa,T,-,Liposcelis bostrychophila,"Picker, 2017",No
+Hemiptera,Aleyrodidae,Aleurocanthus,woglumi,Citrus blackfly,Asia,T,-,Aleurocanthus woglumi,"Picker, 2017",No
+Hemiptera,Aleyrodidae,Aleurothrixus,floccosus,Woolly whitefly,Caribbean,T,2007,Aleurothrixus floccosus,"Picker, 2017",No
+Hemiptera,Aleyrodidae,Bemisia,tabaci,Tobacco whitefly,Probably Asia,T,-,Bemisia tabaci,"Picker, 2017",No
+Hemiptera,Aleyrodidae,Siphoninus,phillyreae,Pomegranate whitefly,"Southern Europe, Northern Africa",T,2009,Siphoninus phillyreae,"Picker, 2017",No
+Hemiptera,Aleyrodidae,Trialeurodes,vaporariorum,Greenhouse whitefly,Likely USA,T,1923,Trialeurodes vaporariorum,"Picker, 2017",No
+Hemiptera,Aphididae,Acyrthosiphon,kondoi,Blue alfafa aphid,Asia,T,-,Acyrthosiphon kondoi,"Picker, 2017",No
+Hemiptera,Aphididae,Acyrthosiphon,pisum,Pea aphid,Palaearctic,T,-,Acyrthosiphon pisum,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,armoraciae,Western Aster root aphid,USA,T,-,Aphis armoraciae,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,chloris,St Johns wort aphid,Eurasia,T (BIO),-,Aphis chloris,"Picker, 2017",Yes
+Hemiptera,Aphididae,Aphis,craccivora,Groundnut aphid,Europe,T,-,Aphis craccivora,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,fabae,Black bean aphid,Europe,T,-,Aphis fabae,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,gossypii,Cotton aphid,Unknown,T,-,Aphis gossypii,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,nasturtii,Buckthorn aphid,Probably Europe,T,-,Aphis nasturtii,"Picker, 2017",No
+Hemiptera,Aphididae,Aphis,spiraecola,Green citrus aphid,East Asia,T,-,Aphis spiraecola,"Picker, 2017",No
+Hemiptera,Aphididae,Aulacorthum,circumflexum,Mottled arum aphid,South East Asia,T,-,Aulacorthum circumflexum,"Picker, 2017",No
+Hemiptera,Aphididae,Aulacorthum,solani,Greenhouse potato aphid,Europe,T,-,Aulacorthum solani,"Picker, 2017",No
+Hemiptera,Aphididae,Brachycaudus,amygdalinus,Short-tailed almond aphid,"Europe, Northern Africa",T,-,Brachycaudus amygdalinus,"Picker, 2017",No
+Hemiptera,Aphididae,Brachycaudus,helichrysi,Leaf curling plum aphid,Palaearctic,T,-,Brachycaudus helichrysi,"Picker, 2017",No
+Hemiptera,Aphididae,Brevicoryne,brassicae,Cabbage aphid,Europe,T,-,Brevicoryne brassicae,"Picker, 2017",No
+Hemiptera,Aphididae,Capitophorus,elaeagni,Artichoke aphid,Mediterranean,T,-,Capitophorus elaeagni,"Picker, 2017",No
+Hemiptera,Aphididae,Cedrobium,laportei,Deodar aphid,Northern Africa,T,-,Cedrobium laportei,"Picker, 2017",No
+Hemiptera,Aphididae,Cerataphis,orchidearum,Orchid aphid,South East Asia,T,-,Cerataphis orchidearum,"Picker, 2017",No
+Hemiptera,Aphididae,Cerataphis,brasiliensis,Palm aphid,South East Asia,T,-,Cerataphis brasiliensis,"Picker, 2017",No
+Hemiptera,Aphididae,Chaetosiphon,fragaefolii,Strawberry aphid,Probably USA,T,-,Chaetosiphon fragaefolii,"Picker, 2017",No
+Hemiptera,Aphididae,Chaitophorus,leucomelas,-,Palaearctic,T,-,Chaitophorus leucomelas,"Picker, 2017",No
+Hemiptera,Aphididae,Chaitophorus,populialba,-,"Eurasia, Northern Africa",T,-,Chaitophorus populialba,"Picker, 2017",No
+Hemiptera,Aphididae,Cinara,cronartii,Black pine aphid,Eastern USA,T,1974,Cinara cronartii,"Picker, 2017",No
+Hemiptera,Aphididae,Cinara,cupressivora,Cypress aphid,Probably Eastern Greece,T,1993,Cinara cupressivora,"Picker, 2017",No
+Hemiptera,Aphididae,Diuraphis,noxia,Russian wheat aphid,"Russia, Palaearctic",T,1978,Diuraphis noxia,"Picker, 2017",No
+Hemiptera,Aphididae,Dysaphis,apiifolia,Hawthorn parsley aphid,Eurasia,T,-,Dysaphis apiifolia,"Picker, 2017",No
+Hemiptera,Aphididae,Dysaphis,foeniculus,Carrot aphid,Eurasia,T,-,Dysaphis foeniculus,"Picker, 2017",No
+Hemiptera,Aphididae,Dysaphis,tulipae,Tulip bulb aphid,"Probably Eurasia, Northern Africa",T,-,Dysaphis tulipae,"Picker, 2017",No
+Hemiptera,Aphididae,Eriosoma,lanigerum,Woolly apple aphid,Possibly USA,T,1895,Eriosoma lanigerum,"Picker, 2017",No
+Hemiptera,Aphididae,Eulachnus,rileyi,Pine needle aphid,"USA, Europe",T,-,Eulachnus rileyi,"Picker, 2017",No
+Hemiptera,Aphididae,Hyadaphis,coriandri,Coriander aphid,Central Asia,T,-,Hyadaphis coriandri,"Picker, 2017",No
+Hemiptera,Aphididae,Hydaphis,foeniculi,Honeysuckle aphid,Palaearctic,T,-,Hydaphis foeniculi,"Picker, 2017",No
+Hemiptera,Aphididae,Hyperomyzus,lactucae,Blackcurrant aphid,Palaearctic,T,-,Hyperomyzus lactucae,"Picker, 2017",No
+Hemiptera,Aphididae,Hysteroneura,seteriae,Rusty plum aphid,USA,T,-,Hysteroneura seteriae,"Picker, 2017",No
+Hemiptera,Aphididae,Illinoia,azalea,-,USA,T,-,Illinoia azalea,"Picker, 2017",No
+Hemiptera,Aphididae,Lipaphis,pseudobrassicae,FALSE cabbage aphid,Palaearctic,T,-,Lipaphis pseudobrassicae,"Picker, 2017",No
+Hemiptera,Aphididae,Macrosiphon,euphorbiae,Potato aphid,USA,T,-,Macrosiphon euphorbiae,"Picker, 2017",No
+Hemiptera,Aphididae,Macrosiphoniella,sanborni,Chrysanthemum aphid,East Asia,T,-,Macrosiphoniella sanborni,"Picker, 2017",No
+Hemiptera,Aphididae,Monelliopsis,pecanis,Yellow pecan aphid,USA,T,-,Monelliopsis pecanis,"Picker, 2017",No
+Hemiptera,Aphididae,Myzocallis,castanicola,Oak aphid,Europe,T,-,Myzocallis castanicola,"Picker, 2017",No
+Hemiptera,Aphididae,Myzus,persicae,Green peach aphid,Probably Asia,T,-,Myzus persicae,"Picker, 2017",No
+Hemiptera,Aphididae,Neotoxoptera,oliveri,Marigold aphid,Probably Asia,T,-,Neotoxoptera oliveri,"Picker, 2017",No
+Hemiptera,Aphididae,Pemphigus,populitransversus,Poplar gall aphid,USA,T,-,Pemphigus populitransversus,"Picker, 2017",No
+Hemiptera,Aphididae,Pentalonia,nigronervosa,Banana aphid,Probably South East Asia,T,-,Pentalonia nigronervosa,"Picker, 2017",No
+Hemiptera,Aphididae,Pineus,pini,Pine woolly aphid,Probably Eurasia,T,-,Pineus pini,"Picker, 2017",No
+Hemiptera,Aphididae,Prociphilus,fraxinifolii,Leafcurl ash aphid,USA,T,-,Prociphilus fraxinifolii,"Picker, 2017",No
+Hemiptera,Aphididae,Rhodobium,porosum,Shiny rose aphid,Probably USA,T,-,Rhodobium porosum,"Picker, 2017",No
+Hemiptera,Aphididae,Rhopalosiphum,maidis,Maize aphid,Probably Pakistan,T,-,Rhopalosiphum maidis,"Picker, 2017",No
+Hemiptera,Aphididae,Rhopalosiphum,padi,Bird cherry aphid,Palaearctic,T,-,Rhopalosiphum padi,"Picker, 2017",No
+Hemiptera,Aphididae,Schizaphis,graminum,Wheat aphid,"Probably Palaearctic, Asia",T,-,Schizaphis graminum,"Picker, 2017",No
+Hemiptera,Aphididae,Schizaphis,minuta,-,"Asia, Australia, Iran",T,-,Schizaphis minuta,"Picker, 2017",No
+Hemiptera,Aphididae,Schizaphis,rotundiventris,Oil palm aphid,"Southern Europe, Asia, Australia",T,-,Schizaphis rotundiventris,"Picker, 2017",No
+Hemiptera,Aphididae,Sipha,maydis,-,"Eurasia,",T,-,Sipha maydis,"Picker, 2017",No
+Hemiptera,Aphididae,Sitobium,avenae,Brown wheat ear aphid,Probably Eurasia,T,-,Sitobium avenae,"Picker, 2017",No
+Hemiptera,Aphididae,Smynthurodes,betae,Bean root aphid,Probably Mediterranean,T,-,Smynthurodes betae,"Picker, 2017",No
+Hemiptera,Aphididae,Takecallis,taiwanus,-,"Taiwan, Japan",T,-,Takecallis taiwanus,"Picker, 2017",No
+Hemiptera,Aphididae,Therioaphis,trifolii,Yellow clover aphid,Mediterranean,T,-,Therioaphis trifolii,"Picker, 2017",No
+Hemiptera,Aphididae,Toxoptera,odinae,Mango aphid,"India, South East Asia",T,-,Toxoptera odinae,"Picker, 2017",No
+Hemiptera,Cicadellidae,Circulifer,tenellus,Beet leafhopper,Europe,T,-,Circulifer tenellus,"Picker, 2017",No
+Hemiptera,Cicadellidae,Opsius,stactogalus,Tamarix leafhopper,Europe,T,-,Opsius stactogalus,"Picker, 2017",No
+Hemiptera,Cicadellidae,Orosius,albicinctus,Orosius leafhopper,Unknown,T,-,Orosius albicinctus,"Picker, 2017",No
+Hemiptera,Coccidae,Coccus,hesperidum,Soft brown scale,Probably Afro-Ethiopian,T,-,Coccus hesperidum,"Picker, 2017",No
+Hemiptera,Coccidae,Pseudaulacaspis,pentagona,White peach scale,Probably Tropical Asia,T,-,Pseudaulacaspis pentagona,"Picker, 2017",No
+Hemiptera,Coccidae,Pulvinaria,psidii,Guava scale,Asia,T,-,Pulvinaria psidii,"Picker, 2017",No
+Hemiptera,Dactylopiidae,Dactylopius,austrinus,Cochineal scale,"Southern USA, Central America",T (BIO),-,Dactylopius austrinus,"Picker, 2017",Yes
+Hemiptera,Dactylopiidae,Dactylopius,ceylonicus,Wild cochineal insect,"Southern USA, Central America",T (BIO),-,Dactylopius ceylonicus,"Picker, 2017",Yes
+Hemiptera,Dactylopiidae,Dactylopius,opuntiae,Prickly pear cochineal,"USA, Mexico",T (BIO),-,Dactylopius opuntiae,"Picker, 2017",Yes
+Hemiptera,Dactylopiidae,Dactylopius,tomentosus,Tomentose cochineal scale,"Southern USA, Central America",T (BIO),-,Dactylopius tomentosus,"Picker, 2017",Yes
+Hemiptera,Delphacidae,Perkinsiella,saccharicida,Kirkaldy sugarcane hopper,Australasia,T,-,Perkinsiella saccharicida,"Picker, 2017",No
+Hemiptera,Diaspididae,Aonidiella,aurantii,Red scale,Southeast Asia,T,-,Aonidiella aurantii,"Picker, 2017",No
+Hemiptera,Diaspididae,Chrysomphalus,aonidium,Circular purple scale,Indian subcontinent,T,-,Chrysomphalus aonidium,"Picker, 2017",No
+Hemiptera,Diaspididae,Cornuaspis,beckii,Citrus mussel scale,Indian subcontinent,T,-,Cornuaspis beckii,"Picker, 2017",No
+Hemiptera,Diaspididae,Diaspidiotus,perniciosus,Pernicious scale,Northern China,T,1911,Diaspidiotus perniciosus,"Picker, 2017",No
+Hemiptera,Diaspididae,Diaspis,bromeliae,Pineapple scale,South America,T,-,Diaspis bromeliae,"Picker, 2017",No
+Hemiptera,Diaspididae,Parlatoria,pergandii,Chaff scale,Asia,T,-,Parlatoria pergandii,"Picker, 2017",No
+Hemiptera,Miridae,Eccritotarsus,catarinensis,-,Brazil,FW (BIO),-,Eccritotarsus catarinensis,"Picker, 2017",Yes
+Hemiptera,Miridae,Falconia,intermedia,-,"Southern USA, Caribbean",T (BIO),-,Falconia intermedia,"Picker, 2017",Yes
+Hemiptera,Monophlebidae,Icerya,purchasi,Australian bug,Australia,T,1873,Icerya purchasi,"Picker, 2017",No
+Hemiptera,Ortheziidae,Orthezia,insignis,-,Southern and Central America,T (BIO),-,Orthezia insignis,"Picker, 2017",Yes
+Hemiptera,Pentotamidae,Nezara,viridula,Green stinkbug,Probably Ethiopia,T,-,Nezara viridula,"Picker, 2017",No
+Hemiptera,Phylloxeridae,Moritziella,corticalis,Oak bark phylloxera,Europe,T,-,Moritziella corticalis,"Picker, 2017",No
+Hemiptera,Phylloxeridae,Viteus,vitifoliae,Grapevine phylloxera,Eastern USA,T,-,Viteus vitifoliae,"Picker, 2017",No
+Hemiptera,Pseudococcidae,Ferrisia,malvastra,White-tailed mealy bug,Americas,T,-,Ferrisia malvastra,"Picker, 2017",No
+Hemiptera,Pseudococcidae,Hypogeococcus,pungens,NA,South America,T (BIO),-,Hypogeococcus pungens,"Picker, 2017",Yes
+Hemiptera,Pseudococcidae,Phenacoccus,parvus,Lantana mealy bug,Southern and Central America,T (BIO),-,Phenacoccus parvus,"Picker, 2017",Yes
+Hemiptera,Pseudococcidae,Planococcus,citri,Citrus mealy bug,"Probably China, Japan",T,-,Planococcus citri,"Picker, 2017",No
+Hemiptera,Pseudococcidae,Planococcus,ficus,Grapevine mealy bug,Unknown,T,-,Planococcus ficus,"Picker, 2017",No
+Hemiptera,Psyllidae,Blastopsylla,occidentalis,Eucalypt shoot psyllid,Australia,T,2004,Blastopsylla occidentalis,"Picker, 2017",No
+Hemiptera,Psyllidae,Ctenarytaina,eucalypti,Blue gum psyllid,Australia,T,1923,Ctenarytaina eucalypti,"Picker, 2017",No
+Hemiptera,Thaumastocoridae,Thaumastocoris,peregrinus,Eucalyptus thaumastocorid,Australia,T,2003,Thaumastocoris peregrinus,"Picker, 2017",No
+Hemiptera,Tingidae,Carvalhotingis,hollandi,Cotton lace bug,Southern and Central America,T (BIO),-,Carvalhotingis hollandi,"Picker, 2017",Yes
+Hemiptera,Tingidae,Carvalhotingis,visenda,Leafsucking lace bug,Southern and Central America,T (BIO),-,Carvalhotingis visenda,"Picker, 2017",Yes
+Hemiptera,Tingidae,Gargaphia,decoris,Woolly nightshade lace bug,Argentina,T (BIO),-,Gargaphia decoris,"Picker, 2017",Yes
+Hemiptera,Tingidae,Teleonemia,elata,-,Brazil,T (BIO),-,Teleonemia elata,"Picker, 2017",Yes
+Hemiptera,Tingidae,Teleonemia,scrupulosa,Lantana lace bug,Mexico,T (BIO),-,Teleonemia scrupulosa,"Picker, 2017",Yes
+Thysanoptera,Thripidae,Fulmekiola,serrata,Sugarcane thrips,Mauritius,T,< 2004,Fulmekiola serrata,"Picker, 2017",No
+Thysanoptera,Thripidae,Heliothrips,haemorrhoidalis,Greenhouse thrips,South America,T,1912,Heliothrips haemorrhoidalis,"Picker, 2017",No
+Thysanoptera,Thripidae,Thrips,palmi,Melon thrips,Southern Asia,T,-,Thrips palmi,"Picker, 2017",No
+Thysanoptera,Thripidae,Thrips,tabaci,Onion thrips,Unknown,T,-,Thrips tabaci,"Picker, 2017",No
+Phthiraptera,Boopiidae,Heterodoxus,spiniger,Dog louse,Australia,T,-,Heterodoxus spiniger,"Picker, 2017",No
+Phthiraptera,Haematopinidae,Haematopinus,eurysternus,Short-nosed cattle louse,Unknown,T,-,Haematopinus eurysternus,"Picker, 2017",No
+Phthiraptera,Haematopinidae,Haematopinus,suis,Pig-louse,Unknown,T,-,Haematopinus suis,"Picker, 2017",No
+Phthiraptera,Linognathidae,Linognathus,setosus,Dog sucking louse,Unknown,T,-,Linognathus setosus,"Picker, 2017",No
+Phthiraptera,Linognathidae,Linognathus,vituli,Long-nosed cattle louse,Unknown,T,-,Linognathus vituli,"Picker, 2017",No
+Phthiraptera,Menopodidae,Goniocotes,gallinae,Poultry fluff louse,Probably Asia,T,-,Goniocotes gallinae,"Picker, 2017",No
+Phthiraptera,Menopodidae,Lipeurus,caponis,Poultry wing louse,Probably Asia,T,-,Lipeurus caponis,"Picker, 2017",No
+Phthiraptera,Menopodidae,Menacanthus,stramineus,Poultry body louse,Unknown,T,-,Menacanthus stramineus,"Picker, 2017",No
+Phthiraptera,Menopodidae,Menopon,gallinae,Poultry shaft louse,Probably Asia,T,-,Menopon gallinae,"Picker, 2017",No
+Phthiraptera,Polyplacidae,Polyplax,spinulosa,Spined rat louse,Probably Asia,T,-,Polyplax spinulosa,"Picker, 2017",No
+Phthiraptera,Trichodectidae,Damalinia,bovis,Cattle biting louse,Unknown,T,-,Damalinia bovis,"Picker, 2017",No
+Phthiraptera,Trichodectidae,Damalinia,caprae,Common goat-louse,Unknown,T,-,Damalinia caprae,"Picker, 2017",No
+Phthiraptera,Trichodectidae,Damalinia,ovis,Sheep biting louse,Unknown,T,-,Damalinia ovis,"Picker, 2017",No
+Coleoptera,Anobiidae,Lasioderma,serricorne,Cigarette beetle,Unknown,T,-,Lasioderma serricorne,"Picker, 2017",No
+Coleoptera,Anobiidae,Stegobium,paniceum,Drug store beetle,Unknown,T,-,Stegobium paniceum,"Picker, 2017",No
+Coleoptera,Apionidae,Coelocephalapion,camarae,Lantana petiole weevil,Mexico,T (BIO),-,Coelocephalapion camarae,"Picker, 2017",Yes
+Coleoptera,Apionidae,Trichapion,lativentre,-,South America,T (BIO),-,Trichapion lativentre,"Picker, 2017",Yes
+Coleoptera,Bostrichidae,Prostephanus,truncatus,Larger grain borer,Central America,T,1999,Prostephanus truncatus,"Picker, 2017",No
+Coleoptera,Bostrichidae,Rhyzopertha,dominica,Lesser grain borer,Probably Tropical Asia,T,-,Rhyzopertha dominica,"Picker, 2017",No
+Coleoptera,Buprestidae,Hylaeogena,jureceki,Leaf-mining jewel beetle,Korea,T (BIO),-,Hylaeogena jureceki,"Picker, 2017",Yes
+Coleoptera,Cerambycidae,Aphanasium,australe,Southeastern,Australia,T (BIO),-,Aphanasium australe,"Picker, 2017",Yes
+Coleoptera,Cerambycidae,Chlorophorus,annularis,Bamboo longhorn beetle,Indian subcontinent,T,-,Chlorophorus annularis,"Picker, 2017",No
+Coleoptera,Cerambycidae,Lagocheirus,funestus,Opuntia biocontrol beetle,Mexico,T (BIO),-,Lagocheirus funestus,"Picker, 2017",Yes
+Coleoptera,Cerambycidae,Nealcidion,cereicola,-,Argentina,T (BIO),-,Nealcidion cereicola,"Picker, 2017",Yes
+Coleoptera,Cerambycidae,Phoracantha,recurva,Eucalypt borer,Australia,T,1906,Phoracantha recurva,"Picker, 2017",No
+Coleoptera,Cerambycidae,Phoracantha,semipunctata,Zig-zag eucalypt borer,Australia,T,1906,Phoracantha semipunctata,"Picker, 2017",No
+Coleoptera,Chrysomelidae,Acanthoscelides,macrophthalmus,Bean weevil,West Africa,T (BIO),-,Acanthoscelides macrophthalmus,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Acanthoscelides,obtectus,Bean weevil,Central America,T,-,Acanthoscelides obtectus,"Picker, 2017",No
+Coleoptera,Chrysomelidae,Algarobius,prosopis,Prosopis seed beetle,Southwestern USA,T (BIO),1987,Algarobius prosopis,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Charidotis,auroguttata,-,Costa Rica,T (BIO),-,Charidotis auroguttata,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Chrysolina,quadrigemina,St. JohnÃ¢â‚¬â„¢s wort beetle,"Northern Africa, Europe",T (BIO),-,Chrysolina quadrigemina,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Gratiana,spadicea,-,South America,T (BIO),-,Gratiana spadicea,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Leptinotarsa,defecta,Satansbos leaf beetle,North America,T (BIO),1992,Leptinotarsa defecta,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Leptinotarsa,texana,Texan Satansbos leaf beetle,North America,T (BIO),1992,Leptinotarsa texana,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Longitarsus,bethae,Flea beetle,Mexico,T (BIO),-,Longitarsus bethae,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Lysathia,species,-,NA,NA,2017,Euwallacea fornicates,"Paap, 2018",No
+Coleoptera,Chrysomelidae,Neltumius,arizonensis,Prosopis seed beetle,Southeastern USA,T (BIO),-,Neltumius arizonensis,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Octotoma,scabripennis,Lantana leaf beetle,"Mexico, Central America",T (BIO),-,Octotoma scabripennis,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Oulema,bilineata,Tobacco slug,South America,T,-,Oulema bilineata,"Picker, 2017",No
+Coleoptera,Chrysomelidae,Oulema,trilineata,Three-lined potato beetle,South America,T,-,Oulema trilineata,"Picker, 2017",No
+Coleoptera,Chrysomelidae,Phenrica,guerini,-,South America,T (BIO),-,Phenrica guerini,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Sulcobruchus,subsuturalis,-,Asia,T (BIO),-,Sulcobruchus subsuturalis,"Picker, 2017",Yes
+Coleoptera,Chrysomelidae,Uroplata,girardi,Lantana hispid,South America,T (BIO),-,Uroplata girardi,"Picker, 2017",Yes
+Coleoptera,Coccinellidae,Harmonia,axyridis,Harlequin lady beetle,Central and Eastern Asia,T,2001,Harmonia axyridis,"Picker, 2017",No
+Coleoptera,Coccinellidae,Hippodamia,variegata,Variegated lady beetle,Palaearctic,T,1965,Hippodamia variegata,"Picker, 2017",No
+Coleoptera,Coccinellidae,Rodolia,cardinalis,Vedalia beetle,Probably Australia,T,1892,Rodolia cardinalis,"Picker, 2017",No
+Coleoptera,Curculionidae,Anthonomus,santacruzi,-,South America,T (BIO),-,Anthonomus santacruzi,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Cosmopolites,sordidus,Banana root borer,Probably South East Asia,T,-,Cosmopolites sordidus,"Picker, 2017",No
+Coleoptera,Curculionidae,Cydmaea,binotata,-,Southeastern Australia,T (BIO),-,Cydmaea binotata,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Cylas,formicarius,Sweet potato weevil,Indonesia,T,-,Cylas formicarius,"Picker, 2017",No
+Coleoptera,Curculionidae,Cyrtobagous,salviniae,Salvinia weevil,Southern and Central America,T (BIO),-,Cyrtobagous salviniae,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Dicomada,rufa,-,Southeastern Australia,T (BIO),-,Dicomada rufa,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Dixoncis,pictus,-,Southeastern Australia,T (BIO),-,Dixoncis pictus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Erytenna,consputa,Hakea fruit weevil,Southeastern Australia,T (BIO),-,Erytenna consputa,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Gonipterus,cf. scutellatus,Eucalyptus snout,"South Australia, Tasmania",T,-,Gonipterus cf. scutellatus,"Picker, 2017",No
+Coleoptera,Curculionidae,Graphognathus,leucoloma,White-fringed beetle,South America,T,-,Graphognathus leucoloma,"Picker, 2017",No
+Coleoptera,Curculionidae,Listroderes,costirostris,Vegetable weevil,Brazil,T,-,Listroderes costirostris,"Picker, 2017",No
+Coleoptera,Curculionidae,Melanterius,acacia,-,Australia,T (BIO),-,Melanterius acacia,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Melanterius,compactus,Acacia seed weevil,Australia,T (BIO),-,Melanterius compactus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Melanterius,maculatus,Acacia seed weevil,Australia,T (BIO),-,Melanterius maculatus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Melanterius,servulus,Acacia seed weevil,Australia,T (BIO),-,Melanterius servulus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Melanterius,ventralis,Acacia seed weevil,Australia,T (BIO),-,Melanterius ventralis,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Metamasius,spinolae,Cactus weevil,Neotropics,T (BIO),-,Metamasius spinolae,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Naupactus,leucoloma,White-fringed weevil,South America,T,-,Naupactus leucoloma,"Picker, 2017",No
+Coleoptera,Curculionidae,Neochetina,bruchi,Water hyacinth weevil,Southern and Central America,T (BIO),-,Neochetina bruchi,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Neochetina,eichhorniae,Mottled water hyacinth weevil,Southern and Central America,T (BIO),-,Neochetina eichhorniae,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Neodiplogrammus,quadrivittatus,Trunk-boring curculionid,South America,T (BIO),-,Neodiplogrammus quadrivittatus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Neohydronomus,affinis,Waterlettuce weevil,Southern and Central America,FW (BIO),-,Neohydronomus affinis,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Pantomorus,cervinus,FullerÃ¢â‚¬â„¢s rose beetle,Probably Americas,T,-,Pantomorus cervinus,"Picker, 2017",No
+Coleoptera,Curculionidae,Pissodes,nemorensis,Northern pine weevil,Southeastern USA,T,1942,Pissodes nemorensis,"Picker, 2017",No
+Coleoptera,Curculionidae,Rhinocyllus,conicus,Thistle-head weevil,Eurasia,T (BIO),-,Rhinocyllus conicus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Rhyssomatus,marginatus,Seed feeding weevil,South America,T (BIO),-,Rhyssomatus marginatus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Sitophylus,granarius,Granary weevil,Palaearctic,T,-,Sitophylus granarius,"Picker, 2017",No
+Coleoptera,Curculionidae,Stenopelmus,rufinasus,Azolla weevil,Americas,T (BIO),1997,Stenopelmus rufinasus,"Picker, 2017",Yes
+Coleoptera,Curculionidae,Sternochetus,mangiferae,Mango weevil,NA,T,-,Sternochetus mangiferae,"Picker, 2017",No
+Coleoptera,Dermestidae,Anthrenus,verbasci,Varied carpet beetle,Probably California,T,-,Anthrenus verbasci,"Picker, 2017",No
+Coleoptera,Dermestidae,Dermestes,maculatus,Hide beetle,Unknown,T,-,Dermestes maculatus,"Picker, 2017",No
+Coleoptera,Dermestidae,Trogoderma,granarium,Khapra beetle,Asia,T,-,Trogoderma granarium,"Picker, 2017",No
+Coleoptera,Dermestidae,Trogoderma,inclusum,Larger cabinet beetle,USA,T,-,Trogoderma inclusum,"Picker, 2017",No
+Coleoptera,Dermestidae,Trogoderma,variabile,Warehouse beetle,Asia,T,-,Trogoderma variabile,"Picker, 2017",No
+Coleoptera,Melyridae,Astylus,atromaculatus,Spotted maize beetle,South America,T,1916,Astylus atromaculatus,"Picker, 2017",No
+Coleoptera,Nitidulidae,Carpophilus,dimidiatus,Corn-sap beetle,Neotropics,T,-,Carpophilus dimidiatus,"Picker, 2017",No
+Coleoptera,Ptinidae,Trigonogenius,globulus,Globular spider beetle,Americas,T,-,Trigonogenius globulus,"Picker, 2017",No
+Coleoptera,Scolytidae,Hylastes,angustatus,Pine bark beetle,Europe,T,-,Hylastes angustatus,"Picker, 2017",No
+Coleoptera,Silvanidae,Ahasverus,advena,Foreign grain beetle,Americas,T,-,Ahasverus advena,"Picker, 2017",No
+Coleoptera,Silvanidae,Oryzaephilus,mercator,Merchant grain beetle,Unknown,T,-,Oryzaephilus mercator,"Picker, 2017",No
+Coleoptera,Silvanidae,Oryzaephilus,surinamensis,Saw-toothed grain beetle,Unknown,T,-,Oryzaephilus surinamensis,"Picker, 2017",No
+Coleoptera,Staphylinidae,Cafius,xantholoma,-,Europe,T/M,-,Cafius xantholoma,"Picker, 2017",No
+Coleoptera,Staphylinidae,Habrocerus,capillaricornis,Verticillate rove beetle,"Europe, Northern Africa",T,1909,Habrocerus capillaricornis,"Picker, 2017",No
+Coleoptera,Tenebrionidae,Alphitobius,diaperinus,Lesser mealworm beetle,ProbablyAfrican,T,-,Alphitobius diaperinus,"Picker, 2017",No
+Coleoptera,Tenebrionidae,Gnathocerus,cornutus,Broad-horned flour beetle,Americas,T,-,Gnathocerus cornutus,"Picker, 2017",No
+Coleoptera,Tenebrionidae,Latheticus,oryzae,Long-headed flour beetle,Asia,T,-,Latheticus oryzae,"Picker, 2017",No
+Coleoptera,Tenebrionidae,Tenebrio,molitor,Yellow mealworm,Probably Eurasia,T,-,Tenebrio molitor,"Picker, 2017",No
+Lepidoptera,Arctiidae,Pareuchaetes,insulata,Yellow-winged Pareuchaetes,"Cuba, Jamaica",T (BIO),-,Pareuchaetes insulata,"Picker, 2017",Yes
+Lepidoptera,Carposinidae,Carposina,autologa,Hakea seed-moth,Australia,T (BIO),-,Carposina autologa,"Picker, 2017",Yes
+Lepidoptera,Crambidae,Niphograpta,albiguttalis,Water hyacinth moth,Amazon,F (BIO),-,Niphograpta albiguttalis,"Picker, 2017",Yes
+Lepidoptera,Crambidae,Salbia,haemorrhoidalis,Lantana leaftier,"Caribbean, Central America",T (BIO),-,Salbia haemorrhoidalis,"Picker, 2017",Yes
+Lepidoptera,Gelechiidae,Pectinophora,gossypiella,Pink bollworm,Australasia,T,-,Pectinophora gossypiella,"Picker, 2017",No
+Lepidoptera,Gelechiidae,Phthorimaea,operculella,Potato tuber moth,Bolivia,T,1900,Phthorimaea operculella,"Picker, 2017",No
+Lepidoptera,Gelechiidae,Sitotroga,cerealella,French grain moth,Australia,T,-,Sitotroga cerealella,"Picker, 2017",No
+Lepidoptera,Gracillariidae,Aristaea,thalassias,-,Australia,T (BIO),-,Aristaea thalassias,"Picker, 2017",Yes
+Lepidoptera,Noctuidae,Spodoptera,exigua,Beet armyworm,South East Asia,T,-,Spodoptera exigua,"Picker, 2017",No
+Lepidoptera,Pieridae,Pieris,brassicae,Large cabbage white butterfly,Eurasia,T,1994,Pieris brassicae,"Picker, 2017",No
+Lepidoptera,Plutellidae,Plutella,xylostella,Diamond-backed moth,Mediterranean,T,-,Plutella xylostella,"Picker, 2017",No
+Lepidoptera,Pterophoridae,Lantanophaga,pusillidactyla,Lantana plume moth,Southern USA to Central America,T (BIO),-,Lantanophaga pusillidactyla,"Picker, 2017",Yes
+Lepidoptera,Pyralidae,Achroia,grisella,Lesser wax moth,Europe,T (BIO),-,Achroia grisella,"Picker, 2017",Yes
+Lepidoptera,Pyralidae,Cactoblastis,cactorum,Prickly pear moth,South America,T (BIO),1933,Cactoblastis cactorum,"Picker, 2017",Yes
+Lepidoptera,Pyralidae,Chilo,partellus,Sorghum stem borer,Likely Asia,T,1950s,Chilo partellus,"Picker, 2017",No
+Lepidoptera,Pyralidae,Ephestia,elutella,Tobacco moth,Europe,T,-,Ephestia elutella,"Picker, 2017",No
+Lepidoptera,Pyralidae,Ephestia,kuehniella,Mediterranean flour moth,India,T,-,Ephestia kuehniella,"Picker, 2017",No
+Lepidoptera,Pyralidae,Galleria,mellonella,Greater wax moth,Probably Eurasia,T,-,Galleria mellonella,"Picker, 2017",No
+Lepidoptera,Pyralidae,Hellula,undalis,Cabbage web worm,Probably Southern Europe or Asia,T,-,Hellula undalis,"Picker, 2017",No
+Lepidoptera,Pyralidae,Plodia,interpunctella,Indian meal moth,Probably South America,T,-,Plodia interpunctella,"Picker, 2017",No
+Lepidoptera,Tineidae,Tinea,pellionella,Case-making clothes moth,Europe,T,-,Tinea pellionella,"Picker, 2017",No
+Lepidoptera,Tortricidae,Cydia,pomonella,Codling moth,Temperate Asia,T,1892,Cydia pomonella,"Picker, 2017",No
+Lepidoptera,Tortricidae,Crocidosema,lantana,Lantana tortricid moth,"Mexico, Southern USA",T (BIO),-,Crocidosema lantana,"Picker, 2017",Yes
+Diptera,Agromyzidae,Calycomyza,eupatorivora,Leafmining fly,Neotropics,T (BIO),-,Calycomyza eupatorivora,"Picker, 2017",Yes
+Diptera,Agromyzidae,Calycomyza,lantanae,Lantana leafmining fly,Americas,T (BIO),-,Calycomyza lantanae,"Picker, 2017",Yes
+Diptera,Agromyzidae,Chromatomyia,horticola,Pea leafminer,Probably Eurasia,T,-,Chromatomyia horticola,"Picker, 2017",No
+Diptera,Agromyzidae,Liriomyza,huidobrensis,Potato leafminer,Probably South America,T,-,Liriomyza huidobrensis,"Picker, 2017",No
+Diptera,Agromyzidae,Liriomyza,trifolii,American leafminer,USA,T,-,Liriomyza trifolii,"Picker, 2017",No
+Diptera,Agromyzidae,Ophiomyia,camarae,Leafmining fly,"Neotropics, Southern USA",T (BIO),-,Ophiomyia camarae,"Picker, 2017",Yes
+Diptera,Agromyzidae,Ophiomyia,lantanae,Lantana seed fly,"Southern USA, South America",T (BIO),-,Ophiomyia lantanae,"Picker, 2017",Yes
+Diptera,Agromyzidae,Psila,rosae,Carrot rust fly,Temperate Eurasia,T,-,Psila rosae,"Picker, 2017",No
+Diptera,Anthomyiidae,Delia,platura,Bean seed maggot,Europe,T,-,Delia platura,"Picker, 2017",No
+Diptera,Anthomyiidae,Fucellia,tergina,Common kelp fly,Europe,M/T,1949,Fucellia tergina,"Picker, 2017",No
+Diptera,Calliphoridae,Calliphora,vicina,European bluebottle,"Europe, North America",T,1965,Calliphora vicina,"Picker, 2017",No
+Diptera,Calliphoridae,Chrysomya,megacephala,Oriental latrine fly,"South East Asia, Eastern Africa",T,1971,Chrysomya megacephala,"Picker, 2017",No
+Diptera,Calliphoridae,Lucilia,sericata,Common green bottle,North America,T,1900,Lucilia sericata,"Picker, 2017",No
+Diptera,Cecidomyiidae,Contarinia,sorghicola,Sorghum midge,Probably Asia,T,-,Contarinia sorghicola,"Picker, 2017",No
+Diptera,Cecidomyiidae,Dasineura,dielsi,Rooikrans gall midge,Australia,T (BIO),-,Dasineura dielsi,"Picker, 2017",Yes
+Diptera,Cecidomyiidae,Dasineura,rubiformis,Black wattle gall midge,Western Australia,T (BIO),-,Dasineura rubiformis,"Picker, 2017",Yes
+Diptera,Cecidomyiidae,Zeuxidiplosis,giardi,St Johns wort midge,France,T (BIO),-,Zeuxidiplosis giardi,"Picker, 2017",Yes
+Diptera,Culicidae,Aedes,albopictus,Asian tiger mosquito,South East Asia,T,1990,Aedes albopictus,"Picker, 2017",No
+Diptera,Faniidae,Fannia,albitarsis,White-footed lesser house fly,South America,T,1953,Fannia albitarsis,"Picker, 2017",No
+Diptera,Phoridae,Megaselia,scalaris,Common coffin fly,Americas,T,-,Megaselia scalaris,"Picker, 2017",No
+Diptera,Piophilidae,Piophila,casei,European cheese fly,Europe,T,-,Piophila casei,"Picker, 2017",No
+Diptera,Psychodidae,Clogmia,albipunctata,Moth fly,Unknown,T,-,Clogmia albipunctata,"Picker, 2017",No
+Diptera,Stratiomyidae,Hermetia,illucens,Window-waisted soldier fly,Americas,T,-,Hermetia illucens,"Picker, 2017",No
+Diptera,Syrphidae,Eristalis,tenax,European drone fly,"Northern Europe, Asia",T,> 1860,Eristalis tenax,"Picker, 2017",No
+Diptera,Tephritidae,Bactrocera,invadens,Invasive fruit fly,Sri Lanka,T,2010,Bactrocera invadens,"Picker, 2017",No
+Diptera,Tephritidae,Ceratitis,capitata,Mediterranean fruit fly,Mediterranean,T,-,Ceratitis capitata,"Picker, 2017",No
+Diptera,Tephritidae,Procecidochares,utilis,Eupatorium gall fly,Mexico,T (BIO),-,Procecidochares utilis,"Picker, 2017",Yes
+Siphonaptera,Tungidae,Tunga,penetrans,Jigger flea,Tropical South America,T,1700s,Tunga penetrans,"Picker, 2017",No
+Siphonaptera,Pucilidae,Ctenocephalides,felis,Cat flea,Egypt,T,-,Ctenocephalides felis,"Picker, 2017",No
+Siphonaptera,Pucilidae,Echidnophaga,gallinacea,Stick-tight flea,South East Asia,T,-,Echidnophaga gallinacea,"Picker, 2017",No
+Siphonaptera,Pucilidae,Pulex,irritans,Human flea,Southern and Central America,T,1700s,Pulex irritans,"Picker, 2017",No
+Siphonaptera,Pucilidae,Xenopsylla,cheopis,Oriental rat flea,"Egypt, Sudan",T,-,Xenopsylla cheopis,"Picker, 2017",No
+Hymenoptera,Aphelinidae,Aphytis,coheni,-,Asia,T (BIO),-,Aphytis coheni,"Picker, 2017",Yes
+Hymenoptera,Aphelinidae,Aphytis,holoxanthus,-,Indian subcontinent,T (BIO),-,Aphytis holoxanthus,"Picker, 2017",Yes
+Hymenoptera,Aphelinidae,Aphytis,lepidosaphes,-,Indian subcontinent,T (BIO),-,Aphytis lepidosaphes,"Picker, 2017",Yes
+Hymenoptera,Aphelinidae,Aphytis,lingnanensis,-,Asia,T (BIO),-,Aphytis lingnanensis,"Picker, 2017",Yes
+Hymenoptera,Aphelinidae,Aphytis,melinus,-,Asia,T (BIO),-,Aphytis melinus,"Picker, 2017",Yes
+Hymenoptera,Braconidae,Apanteles,subandinus,Potato tuber moth parasitoid,Bolivian Andes,T,1960s,Apanteles subandinus,"Picker, 2017",No
+Hymenoptera,Braconidae,Cotesia,plutellae,Diamondback moth parasitoid,Europe,T,-,Cotesia plutellae,"Picker, 2017",No
+Hymenoptera,Encyrtidae,Comperiella,bifasciata,Red scale parasite,Asia,T (BIO),-,Comperiella bifasciata,"Picker, 2017",Yes
+Hymenoptera,Encyrtidae,Copidosoma,koehleri,-,South America,T (BIO),-,Copidosoma koehleri,"Picker, 2017",Yes
+Hymenoptera,Eulophidae,Leptocybe,invasa,Eucalyptus gall wasp,Australia,T,2007,Leptocybe invasa,"Picker, 2017",No
+Hymenoptera,Eulophidae,Quadrastichus,erythrinae,Erythrina gall wasp,Western Africa,T,-,Quadrastichus erythrinae,"Picker, 2017",No
+Hymenoptera,Evaniidae,Evania,appendigaster,Ensign wasp,"Southern China, South East Asia",T,-,Evania appendigaster,"Picker, 2017",No
+Hymenoptera,Formicidae,Linepithema,humile,Argentine ant,South America,T,1908,Linepithema humile,"Picker, 2017",No
+Hymenoptera,Ibaliidae,Ibalia,leucospoides,Sirex ibaliid wasp,Holarctic,T (BIO),1990s,Ibalia leucospoides,"Picker, 2017",Yes
+Hymenoptera,Megalyridae,Megalyra,fasciipennis,Megalyrid wasp,Australia,T,1910,Megalyra fasciipennis,"Picker, 2017",No
+Hymenoptera,Mymaridae,Patasson,nitens,-,Southern Australia,T (BIO),-,Patasson nitens,"Picker, 2017",Yes
+Hymenoptera,Pteromalidae,Trichilogaster,acacialongifoliae,Acacia gall wasp,Australia,T,1990s,Trichilogaster acacialongifoliae,"Picker, 2017",No
+Hymenoptera,Pteromalidae,Trichilogaster,signiventris,Acacia gall wasp,Australia,T,-,Trichilogaster signiventris,"Picker, 2017",No
+Hymenoptera,Siricidae,Sirex,noctilio,Sirex wood wasp,"Europe, Asia, Northern Africa",T,1962,Sirex noctilio,"Picker, 2017",No
+Hymenoptera,Tenthridinidae,Caliroa,cerasi,Pear slug,Europe,T,-,Caliroa cerasi,"Picker, 2017",No
+Hymenoptera,Tenthridinidae,Fenusa,dohrnii,Alder leafminer,"Europe, USA",T,-,Fenusa dohrnii,"Picker, 2017",No
+Hymenoptera,Vespidae,Polistes,dominulus,European paper wasp,"Europe, Asia, Northern Africa",T,2008,Polistes dominulus,"Picker, 2017",No
+Hymenoptera,Vespidae,Vespula,germanica,German wasp,"Europe, Asia, Northern Africa",T,1975,Vespula germanica,"Picker, 2017",No
+Lepidoptera,Noctuidae,NA,NA,NA,NA,NA,NA,Agrotis ipsilon,"Zengeya, 2021",NA
+Lepidoptera,Noctuidae,NA,NA,NA,NA,NA,NA,Agrotis segetum,"Zengeya, 2021",NA
+Lepidoptera,Pyralidae,NA,NA,NA,NA,NA,NA,Amyelois transitella,"Zengeya, 2021",NA
+Hymenoptera,Formicidae,NA,NA,NA,NA,NA,NA,Anoplolepis gracilipes,"Zengeya, 2021",NA
+Hemiptera,Diaspididae,NA,NA,NA,NA,NA,NA,Aonidiella orientalis,"Zengeya, 2021",NA
+Hymenoptera,Braconidae,NA,NA,NA,NA,NA,NA,Aphidius matricariae,"Zengeya, 2021",NA
+Thysanoptera,Thripidae,NA,NA,NA,NA,NA,NA,Apterothrips apteris,"Zengeya, 2021",NA
+Hemiptera,Diaspididae,NA,NA,NA,NA,NA,NA,Aspidiotus destructor,"Zengeya, 2021",NA
+Diptera,Muscidae,NA,NA,NA,NA,NA,NA,Atherigona soccata,"Zengeya, 2021",NA
+Hemiptera,Diaspididae,NA,NA,NA,NA,NA,NA,Aulacaspis tubercularis,"Zengeya, 2021",NA
+NA,NA,NA,NA,NA,NA,NA,NA,Brachycaudus persicae,"Zengeya, 2021",NA
+Hemiptera,Coreidae,NA,NA,NA,NA,NA,2014,Catorhintha schaffneri,"Zengeya, 2021",Yes
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Ceutorhynchus pallidactylus,"Zengeya, 2021",NA
+Lepidoptera,Crambidae,NA,NA,NA,NA,NA,NA,Chilo sacchariphagus,"Zengeya, 2021",NA
+Hemiptera,Diaspididae,NA,NA,NA,NA,NA,NA,Chrysomphalus aonidum,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Cinara cupressi,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,2013,Cissoanthonomus tuberculipennis,"Zengeya, 2021",Yes
+Blattodea,Rhinotermitidae,NA,NA,NA,NA,NA,NA,Coptotermes amanii,"Zengeya, 2021",NA
+Blattodea,Rhinotermitidae,NA,NA,NA,NA,NA,NA,Coptotermes curvignathus,"Zengeya, 2021",NA
+Hemiptera,Tingidae,NA,NA,NA,NA,NA,NA,Corythucha ciliata,"Zengeya, 2021",NA
+Hymenoptera,Braconidae,NA,NA,NA,NA,NA,NA,Cotesia plutella,"Zengeya, 2021",NA
+Lepidoptera,Tortricidae,NA,NA,NA,NA,NA,NA,Cryptophlebia illepida,"Zengeya, 2021",NA
+Diptera,Cecidomyiidae,NA,NA,NA,NA,NA,NA,Dasineura pilifera,"Zengeya, 2021",NA
+Diptera,Cecidomyiidae,NA,NA,NA,NA,NA,1994,Dasineura strobila,"Zengeya, 2021",Yes
+Hymenoptera,Braconidae,NA,NA,NA,NA,NA,NA,Dinocampus coccinellae,"Zengeya, 2021",NA
+Diptera,Drosophilidae,NA,NA,NA,NA,NA,NA,Drosophila flavohirta,"Zengeya, 2021",NA
+Hemiptera,Pseudococcidae,NA,NA,NA,NA,NA,NA,Dysmicoccus brevipes,"Zengeya, 2021",NA
+Lepidoptera,Pyralidae,NA,NA,NA,NA,NA,NA,Ectomyelois ceratoniae,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Eriosoma pyricola,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Euwallacea fornicatus,"Zengeya, 2021",NA
+Diptera,Fanniidae,NA,NA,NA,NA,NA,NA,Fannia canicularis,"Zengeya, 2021",NA
+Thysanoptera,Thripidae,NA,NA,NA,NA,NA,NA,Frankliniella schultzei,"Zengeya, 2021",NA
+Hemiptera,Aphalaridae,NA,NA,NA,NA,NA,NA,Glycaspis brimblecombei,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,1916,Gonipterus scutellatus,"Zengeya, 2021",NA
+Lepidoptera,Tortricidae,NA,NA,NA,NA,NA,NA,Grapholita molesta,"Zengeya, 2021",NA
+Diptera,Ephydridae,NA,NA,NA,NA,NA,NA,Hydrellia egerieae,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Hylurgus ligniperda,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Lapaphis pseudobrassicae,"Zengeya, 2021",NA
+Coleoptera,Anobiidae,NA,NA,NA,NA,NA,NA,Lasioderma serricorme,"Zengeya, 2021",NA
+Diptera,Mycetophilidae,NA,NA,NA,NA,NA,NA,Lema bilineata,"Zengeya, 2021",NA
+Diptera,Chironomidae,NA,NA,NA,NA,NA,NA,Limnophyes minimus,"Zengeya, 2021",NA
+Thysanoptera,Phlaeothripidae,NA,NA,NA,NA,NA,2013,Liothrips tractabilis,"Zengeya, 2021",Yes
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,2013,Listronotus setosipennis,"Zengeya, 2021",Yes
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Macrosiphonella sanborni,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Macrosiphum euphorbiae,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Macrosiphum rosae,"Zengeya, 2021",NA
+Coleoptera,Coccinellidae,NA,NA,NA,NA,NA,2013,Mada polluta,"Zengeya, 2021",Yes
+Lepidoptera,Crambidae,NA,NA,NA,NA,NA,NA,Maruca vitrata,"Zengeya, 2021",NA
+Hemiptera,Delphacidae,NA,NA,NA,NA,NA,2013,Megamelus scutellaris,"Zengeya, 2021",Yes
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Melanaphis sacchari,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,1986,Melanterius acaciae,"Zengeya, 2021",Yes
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Myzus ascalonicus,"Zengeya, 2021",NA
+NA,NA,NA,NA,NA,NA,NA,1993,Neltume arizonensis,"Zengeya, 2021",NA
+Coleoptera,Chrysomelidae,NA,NA,NA,NA,NA,NA,Neolema abbreviata,"Zengeya, 2021",NA
+Orthoptera,Gryllidae,NA,NA,NA,NA,NA,NA,Oecanthus pellucens,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Orthotomicus erosus,"Zengeya, 2021",NA
+Hemiptera,Pseudococcidae,NA,NA,NA,NA,NA,NA,Phenacoccus madeirensis,"Zengeya, 2021",NA
+Hemiptera,Pseudococcidae,NA,NA,NA,NA,NA,NA,Phenacoccus manihoti,"Zengeya, 2021",NA
+Lepidoptera,Gracillariidae,NA,NA,NA,NA,NA,NA,Phyllocnistis citrella,"Zengeya, 2021",NA
+Coleoptera,Chrysomelidae,NA,NA,NA,NA,NA,NA,Physonota maculiventris,"Zengeya, 2021",NA
+Hemiptera,Adelgidae,NA,NA,NA,NA,NA,NA,Pineus boerneri,"Zengeya, 2021",NA
+Coleoptera,Chrysomelidae,NA,NA,NA,NA,NA,NA,Plectonycha correntina,"Zengeya, 2021",NA
+Hymenoptera,Eumenidae,NA,NA,NA,NA,NA,NA,Polistes dominula,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Pontomorus cervinus,"Zengeya, 2021",NA
+Lepidoptera,Praydidae,NA,NA,NA,NA,NA,NA,Prays citri,"Zengeya, 2021",NA
+Diptera,Cecidomyiidae,NA,NA,NA,NA,NA,NA,Procontarinia matteiana,"Zengeya, 2021",NA
+Hemiptera,Pseudococcidae,NA,NA,NA,NA,NA,NA,Pseudococcus calceolariae,"Zengeya, 2021",NA
+Hemiptera,Pseudococcidae,NA,NA,NA,NA,NA,NA,Pseudococcus viburni,"Zengeya, 2021",NA
+Diptera,Psychodidae,NA,NA,NA,NA,NA,NA,Psychoda parthenogenetica,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Rhopalosiphus maidis,"Zengeya, 2021",NA
+Diptera,Drosophilidae,NA,NA,NA,NA,NA,NA,Scaptomyza oxyphallus,"Zengeya, 2021",NA
+Thysanoptera,Thripidae,NA,NA,NA,NA,NA,NA,Selenothrips rubrocinctus,"Zengeya, 2021",NA
+Diptera,Lonchaeidae,NA,NA,NA,NA,NA,NA,Silba adipata,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Sipha flava,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Sitobion avenae,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,2015,Smicronyx lutulentus,"Zengeya, 2021",Yes
+Lepidoptera,Crambidae,NA,NA,NA,NA,NA,NA,Spolodea recurvalis,"Zengeya, 2021",NA
+Lepidoptera,Noctuidae,NA,NA,NA,NA,NA,NA,Thysanoplusia orichalcea,"Zengeya, 2021",NA
+Hemiptera,Aphididae,NA,NA,NA,NA,NA,NA,Toxoptera citricidus,"Zengeya, 2021",NA
+Coleoptera,Chrysomelidae,NA,NA,NA,NA,NA,NA,Trachymela tincticollis,"Zengeya, 2021",NA
+Hymenoptera,Pteromalidae,NA,NA,NA,NA,NA,1982,Trichilogaster acaciaelongifoliae,"Zengeya, 2021",Yes
+Lepidoptera,Gelechiidae,NA,NA,NA,NA,NA,2016,Tuta absoluta,"Zengeya, 2021",NA
+Lepidoptera,Nymphalidae,NA,NA,NA,NA,NA,NA,Vanessa cardui,"Zengeya, 2021",NA
+Coleoptera,Curculionidae,NA,NA,NA,NA,NA,NA,Xyleborinus saxeseni,"Zengeya, 2021",NA
+Coleoptera,Chrysomelidae,NA,NA,NA,NA,NA,2013,Zygogramma bicolorata,"Zengeya, 2021",Yes

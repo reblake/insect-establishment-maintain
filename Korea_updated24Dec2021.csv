@@ -1,0 +1,182 @@
+ORDER,FAMILY,GENUS SPECIES,YEAR,origin,STATUS,REFERENCE,Intentional_Release,source,established_indoors_or_outdoors
+Blattaria,Blattidae,Periplaneta americana,"NA","Ori, Eth, Nea, Net, [Afr]",P hyg,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Blattaria,Blattidae,Periplaneta fuliginosa,"NA","Ori, Nea",P hyg,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Blattaria,Blattellidae,Blattella germanica,"NA",Cos [N. America],P hyg,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Embiidina,Oligotomidae,Oligotoma saundersii,2001,Tropical and subtropical [India],Non P (indoor),Lee et al. (2002b),"NA","Hong, 2012",In
+Isoptera,Rhinotermitidae,Reticulitermes speratus,1912,Ori [SE Asia],P,Lee (1996; Appendix I); Nawa (1914),"NA","Hong, 2012",Out
+Psocoptera,Liposcelidae,Liposcelis entomophilus,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Psocoptera,Trogiidae,Lepinotus reticulatus,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Psocoptera,Trogiidae,Trogium pulsatorium,"NA",Cos,P*,Cross-check Chu (1969) and Kiritani (2002),"NA","Hong, 2012",Out
+Thysanoptera,Thripidae,Dichromothrips smithi,1996,Ori,P* (indoor),Lee et al. (2002a),"NA","Hong, 2012",In
+Thysanoptera,Thripidae,Echinothrips americanus,2009,"Nea, Eur, EA",P*â€  (indoor; disappeared),NPQS (2010b),"NA","Hong, 2012",In
+Thysanoptera,Thripidae,Frankliniella occidentalis,1993,"Nea, Pal, Eth, Aus [N. America]",P*,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Thysanoptera,Thripidae,Thrips palmi,1993,Cos [Oriental],P* (indoor),Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",In
+Thysanoptera,Thripidae,Thrips simplex,1991,Cos [Mediterranean],P* (indoor),Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",In
+Thysanoptera,Thripidae,Thrips tabaci,"NA",Cos [C. Asia],P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Thysanoptera,Phlaeothripidae,Gynaikothrips ficorum,1995,Cos,P*â€  (indoor; disappeared),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Anthocoridae,Orius laevigatus,2005,Cos [Mediterranean],NEâ€  (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Hemiptera,Cimicidae,Cimex lectularius,"NA",Cos [Middle East],P hyg (disappeared),Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hemiptera,Tingidae,Corythucha ciliata,1995,Nea [USA],P*,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Flatidae,Metcalfa pruinosa,2005,"Pal, Nea [N. America]",P*â€ ,NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Fulgoridae,Lycorma delicatula,2004,Ori [China],P*,NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Acyrthosiphon chelidonii,"NA",Eur,P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Aphis fabae,1998,Cos,Non P,NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Aphis hederae,2000,"Pal, Nea",Non P,Cross-check Kim et al. (2006) and Kiritani (2002),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Eriosoma lanigerum,1910,Cos [Europe],P,Lee (1996; Appendix I); Mukosaka (1913); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Macrosiphum euphorbiae,"NA","Nea, Cos",P,Cross-check Lee et al. (2002c) and Kiritani (2002),"NA","Hong, 2012",Out
+Hemiptera,Aphididae,Uroleucon erigeronense,"NA","Nea, Cos",Non P,Cross-check Lee et al. (2002c) and Kiritani (2002),"NA","Hong, 2012",Out
+Hemiptera,Phylloxeridae,Aphanostigma iakusuiense,1920s,Cos,P,Lee (1996; Appendix I); Anonymous (1923),"NA","Hong, 2012",Out
+Hemiptera,Phylloxeridae,Daktulosphaera vitifoliae,1917,Cos [N. America],P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Aleyrodidae,Aleurocanthus spiniferus,"NA",Ori [Oriental],P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hemiptera,Aleyrodidae,Bemisia tabaci,1998,"Ind, Cos [Middle East]",P* (indoor),NPQS (2010b),"NA","Hong, 2012",In
+Hemiptera,Aleyrodidae,Trialeurodes packardi,1981,Nea,P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Aleyrodidae,Trialeurodes vaporariorum,1977,Cos,P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Margarodidae,Icerya purchasi,1910s,Cos [Australia],P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Pseudococcidae,Planococcus citri,"NA","Ori, Eth [Tropical]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Pseudococcidae,Pseudococcus dendrobiorum,2002,"Ori, Aus",P* (indoor; disappeared),NPQS (2010b),"NA","Hong, 2012",In
+Hemiptera,Pseudococcidae,Pseudococcus longispinus,2000,Cos,P* (indoor),NPQS (2010b),"NA","Hong, 2012",In
+Hemiptera,Coccidae,Ceroplastes rubens,1930s,Cos [Asia],P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hemiptera,Coccidae,Eucalymnatus tessellatus,"NA","Ori, Eth, Aus, Nea, Net [Tropical]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Coccidae,Parasaissetia nigra,"NA","Ori, Eth, Net [Tropical]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Coccidae,Saissetia coffeae,"NA","Ori, Eth, Net [Tropical]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Aonidiella citrina,"NA","Ori, Eth, Net [Oriental]",P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hemiptera,Diaspidae,Chrysomphalus aonidium,"NA","Ori, Eth, Net [Oriental]",P* (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Chrysomphalus dictyospermi,"NA",Cos [Oriental],P (indoor),Cross-check Paek et al. (2010) and Kiritani (2002),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Diaspis boisduvalii,"NA","Ori, Eth, Net [Neotropical]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Diaspis bromeliae,"NA","Ori, Eth, Net [Mexico]",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Diaspis echinocacti,"NA",Cos [Neotropical],P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Lepidosaphes laterochitinosa,2010,Ori,P*â€  (indoor; disappeared),NPQS (2010b),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Lepidosaphes ulmi,"NA","Pal, Ori, Aus, Nea, Net [Palaearctic]",P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hemiptera,Diaspidae,Parlatoria proteus,1920s,"Ori, Eth, Net [Oriental]",P (indoor),Lee (1996; Appendix I); Anonymous (1928),"NA","Hong, 2012",In
+Hemiptera,Diaspidae,Unaspis yanonensis,1930s,"Pal, Ori [China]",P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Histeridae,Carcinops pumilio,"NA",Cos,P*,Cross-check Ohara and Paik (1998) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Scarabaeidae,Oryctes rhinoceros,"NA",Ori,Pâ€  (disappeared),Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Scarabaeidae,Protaetia orientalis,"NA",Ori,P,Cross-check Kim (2001) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Attagenus japonicus,"NA",Cos,P,Cross-check Kim et al. (1999) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Dermestes ater,"NA",Cos,P,Cross-check Kim et al. (1999) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Dermestes frischi,"NA",Cos,P*,Cross-check Kim et al. (1999) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Dermestes lardarius,"NA",Cos,P*,Cross-check Kim et al. (1999) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Dermestes maculatus,"NA",Cos,P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Dermestes vorax,1920s,Pal,P,Lee (1996; Appendix I); Yokoyama (1930),"NA","Hong, 2012",Out
+Coleoptera,Dermestidae,Trogoderma granarium,1932,"Pal, Ori, Eth, Aus",P (disappeared),Lee (1996; Appendix I); Nakayama (1932),"NA","Hong, 2012",Out
+Coleoptera,Anobiidae,Lasioderma serricorne,"NA",Cos [C. America],P,Cross-check Lee (1996; Appendix I) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Anobiidae,Stegobium paniceum,"NA",Cos,P,Cross-check Lee (1996; Appendix I) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Ptinidae,Gibbium psylloides,"NA",Eur,P,Cross-check Paik (1981) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Ptinidae,Pseudeurostus hilleri,"NA","Eur, Nea",P*,Cross-check Lee (1978) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Ptinidae,Ptinus fur,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Ptinidae,Ptinus japonicas,"NA",Ori,P,Cross-check Paik (1981) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Bostrychidae,Rhyzopertha dominica,1975,Cos,P (indoor),Lee (1996; Appendix I); Paik (1976); NPQS (2010b),"NA","Hong, 2012",In
+Coleoptera,Bostrychidae,Lyctus brunneus,"NA",Cos,P (indoor),Lee (1996; Appendix I); Paik (1981),"NA","Hong, 2012",In
+Coleoptera,Trogossitidae,Tenebrioides mauritanicus,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cleridae,Necrobia ruficollis,"NA",Cos,P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Cleridae,Necrobia rufipes,"NA",Cos,P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Cleridae,Necrobia violacea,"NA",Cos,P*,Cross-check Kim and Jung (2006) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cleridae,Tarsostenus univittatus,"NA",Cos,P*,Cross-check Kim and Jung (2006) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Nitidulidae,Carpophilus marginellus,"NA","Pal, Ori, Eth",P*,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Monotomidae,Monotoma picipes,"NA","Eur, Nea",P*,Cross-check ESK and KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Silvanidae,Ahasverus advena,"NA",Cos,P*â€  (indoor),Cross-check Han et al. (2005) and Kiritani (2002),"NA","Hong, 2012",In
+Coleoptera,Silvanidae,Oryzaephilus surinamensis,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Silvanidae,Silvanus bidentatus,"NA",Cos,P*,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Silvanidae,Silvanus lewisi,"NA","Pal, Ori, Afr, Aus",P*,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cryptophagidae,Cryptophagus acutangulus,"NA",Hol,P*,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cryptophagidae,Cryptophagus cellaris,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cryptophagidae,Henoticus californicus,"NA","Nea, Eur [N. America]",P (disappeared?),Paik (1982),"NA","Hong, 2012",Out
+Coleoptera,Coccinellidae,Cryptolaemus montrouzieri,2009,Cos [Australia],NEâ€  (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Coleoptera,Coccinellidae,Rodolia cardinalis,1910s,"Pal, Ori, Aus, Nea",NE (intentionally),Lee (1996; Appendix I); Yoshida (1917),I,"Hong, 2012",Out
+Coleoptera,Mycetophagidae,Typhaea stercorea,"NA",Cos,P (indoor),Cross-check Paik (1982) and Kiritani (2002,"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Alphitobius diaperinus,1930s,Cos,P,Lee (1996; Appendix I); Mori (1935),"NA","Hong, 2012",Out
+Coleoptera,Tenebrionidae,Alphitobius laevigatus,"NA",Cos,P*,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Tenebrionidae,Alphitophagus bifasciatus,"NA","Pal, Nea",P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Gnathocerus cornutus,"NA",Cos,P* (indoor),Cross-check Kim and Jung (2005) and Kiritani (2002),"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Latheticus oryzae,"NA",Cos,P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Tenebrio molitor,"NA",Cos [Europe],P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Tenebrio obscurus,"NA",Cos,P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Tenebrionidae,Tribolium castaneum,"NA",Cos [Australia],P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Tenebrionidae,Tribolium confusum,"NA",Cos [Africa],P (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Coleoptera,Oedemeridae,Nacerdes melanura,"NA",Cos,Non P,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Cerambycidae,Paraglenea fortunei,"NA",Ori,P*,Cross-check Park and Lee (1999) and Kiritani (2002),"NA","Hong, 2012",Out
+Coleoptera,Chrysomelidae,Oides bowringii,"NA","Pal, Ori",Non P (disappeared),Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Chrysomelidae,Ophraella communa,2000,Nea,Non P,Sohn et al. (2002),"NA","Hong, 2012",Out
+Coleoptera,Bruchidae,Acanthoscelides pallidipennis,1978,Nea,P*â€ ,Tuda et al. (2001),"NA","Hong, 2012",Out
+Coleoptera,Bruchidae,Bruchus pisorum,1910s,Cos [Mediterranean],P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Bruchidae,Bruchus rufimanus,1930s,Cos [Europe],P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Bruchidae,Callosobruchus chinensis,"NA",Cos [SE Asia],P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Anthribidae,Araecerus fasciculatus,1926,Cos,P (indoor),Yokoo and Taguchi (1939),"NA","Hong, 2012",In
+Coleoptera,Curculionidae,Craponius inaequalis,1918,Nea [USA],Pâ€  (disappeared),Muramastsu (1918),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Ceutorhynchus obstrictus,1995,Pal [Europe],P*,Hong et al. (2000),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Hypera postica,1994,"Pal, Ori, Nea",P*,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Hypera punctata,1993,"Pal, Nea",Non P,Hong et al. (2000),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Lissorhoptrus oryzophilus,1988,"Pal, Nea [USA]",P*,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Listroderes costrirostris,1989,"Pal, Eth, Aus, Nea,Net [Brazil]",P*,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Orchidophilus ran,1988,Ori,P* (indoor; disappeared),Choi et al. (1992),"NA","Hong, 2012",In
+Coleoptera,Curculionidae,Rhinoncus perpendicularis,1997,Pal [Europe],Non P,Hong et al. (2000),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Sitona hispidulus,"NA",Pal,P*,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Sitona lineatus,1993,"Pal, Nea",P*,Hong et al. (2000),"NA","Hong, 2012",Out
+Coleoptera,Dryophthoridae,Cosmopolites sordidus,1983,"Ori, Eth, Net",P* (indoor; disappeared),Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",In
+Coleoptera,Dryophthoridae,Nassophasis aspericollis,1998,Ori,P*â€  (indoor; disappeared),Hong (2000),"NA","Hong, 2012",In
+Coleoptera,Dryophthoridae,Sphenophorus venatus vestitus,2008,Nea [N. America],P*â€  (disappeared),Yang et al. (2009); NPQS (2010b),"NA","Hong, 2012",Out
+Hymenoptera,Encyrtidae,Anicetus beneficus,1975,Ori [China?],NE (intentionally),Lee (1996; Appendix I),I,"Hong, 2012",Out
+Hymenoptera,Aphelinidae,Aphelinus mali,1928,Cos [N. America],NE (intentionally),Lee (1996; Appendix I); Nakayama (1936),I,"Hong, 2012",Out
+Hymenoptera,Aphelinidae,Encarsia formosa,1990,"Pal, Nea",NE (indoor; intentionally),Lee (1996; Appendix I); NPQS (2011),I,"Hong, 2012",In
+Hymenoptera,Aphelinidae,Eretmocerus mundus,2007,"Pal, Eth, Nea",NE (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Hymenoptera,Braconidae,Aphidius colemani,2003,"Pal, Eth, Aus, Nea, Net",NE (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Hymenoptera,Braconidae,Dacnusa sibirica,2003,Pal [Europe],NE (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Hymenoptera,Cynipidae,Dryocosmus kuriphilus,1959,"Pal, Nea [China?]",P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Hymenoptera,Bethylidae,Cephalonomia gallicola,1998,Cos,P hyg,Crosscheck with Lim et al. (2007) and Kiritani (2002),"NA","Hong, 2012",Out
+Hymenoptera,Formicidae,Monomorium pharaonis,1940,Cos [Africa],P hyg,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Hymenoptera,Formicidae,Pheidole indica,"NA",Ori,Non P,Cross-check Kim and Kim (1982) and Morimoto and Kiritani (1995),"NA","Hong, 2012",Out
+Hymenoptera,Formicidae,Tapinoma melanocephalum,2005,"Aus, Nea, Net",P hyg,Choe et al. (2009),"NA","Hong, 2012",Out
+Hymenoptera,Sphecidae,Sceliphron deforme,"NA",Ori,Non P,Lee (1996; Appendix I); Paik (1981),"NA","Hong, 2012",Out
+Hymenoptera,Sphecidae,Sceliphron madraspatanum,"NA",Ori,Non P,Lee (1996; Appendix I); Paik (1981),"NA","Hong, 2012",Out
+Hymenoptera,Apidae,Apis mellifera,"NA",Cos,U (intentionally),Lee (1996; Appendix I),I,"Hong, 2012",Out
+Hymenoptera,Apidae,Bombus terrestris,2002,Pal [Europe],U (indoor; intentionally),NPQS (2011),I,"Hong, 2012",In
+Siphonaptera,Pulicidae,Pulex irritans,"NA",Cos,P hyg (indoor),Lee (1996; Appendix I),"NA","Hong, 2012",In
+Siphonaptera,Pulicidae,Xenopsylla cheopis,"NA",Ori,P hyg,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Diptera,Culicidae,Culex pipiens,"NA","Pal, Eth, Aus, Net",P hyg (indoor),Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",In
+Diptera,Psychodidae,Tinearia alternata,"NA",Pal,P hyg,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Diptera,Cecidomyiidae,Contarinia maculipennis,2007,"Ori, Nea",P* (indoor; disappeared),Kang et al. (2010),"NA","Hong, 2012",In
+Diptera,Cecidomyiidae,Mycophila speyeri,1999,Pal. Nea.,P* (indoor),Lee and Kim (2003),"NA","Hong, 2012",In
+Diptera,Cecidomyiidae,Obolodiplosis robiniae,2002,Pal. Nea. [N. America],P*,Woo et al. (2003); NPQS (2010b),"NA","Hong, 2012",Out
+Diptera,Cecidomyiidae,Thecodiplosis japonensis,1929,Pal [Japan],P,Takaki (1929); NPQS (2010b),"NA","Hong, 2012",Out
+Diptera,Stratiomyidae,Hermetia illucens,1990,"Pal, Nea [N. America]",Non P,Kim (1997),"NA","Hong, 2012",Out
+Diptera,Syrphidae,Merodon equestris,"NA","Pal, Nea [Mediterranean]",P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Diptera,Drosophilidae,Drosophila melanogaster,"NA",Cos,P hyg,Cross-check Paik (1981) and Kiritani (2002),"NA","Hong, 2012",Out
+Diptera,Drosophilidae,Drosophila simulans,"NA",Cos,P hyg,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Diptera,Agromyzidae,Liriomyza huidobrensis,2002,Cos [Neotropical],P*â€  (indoor),CAB International (2002),"NA","Hong, 2012",In
+Diptera,Agromyzidae,Liriomyza trifolii,1994,"Pal, Ori, Eth, Nea, Net [N. America]",P* (indoor),Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",In
+Diptera,Muscidae,Fannia canicularis,"NA",Cos,P hyg,Cross-check Paik (1981) and Kiritani (2002),"NA","Hong, 2012",Out
+Diptera,Calliphoridae,Phormia regina,"NA","Pal, Nea",P hyg,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Diptera,Hypodermatidae,Hypoderma bovis,"NA",Cos,Non P,Cross-check ESK/KSAE (1994) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Tortricidae,Grapholita molesta,1910s,"Pal, Aus, Nea",P,Lee (1996; Appendix I); Muramastsu (1919),"NA","Hong, 2012",Out
+Lepidoptera,Tortricidae,Grapholita dimorpha,"NA",Pal,P*,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Lepidoptera,Psychidae,Eumeta japonica,"NA",Ori,P,Cross-check Byun et al. (2009) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Tineidae,Nemapogon granellus,"NA",Cos,P,Cross-check Paik (1981) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Tineidae,Opogona sacchari,1999,Cos,P*â€  (indoor),NPQS (2010b),"NA","Hong, 2012",In
+Lepidoptera,Tineidae,Tinea translucens,1960s,Cos,P,Cross-check Kim and Bae (2007) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Tineidae,Trichophaga tapetzella,"NA",Cos,P,Cross-check Byun et al. (2009) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Yponomeutidae,Yponomeuta malinellus,1930s,"Pal, Nea [Europe]",P,Cross-check Nakayama (1934a) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Gelechiidae,Phthorimaea operculella,1968,"Aus, Nea",P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Lepidoptera,Gelechiidae,Sitotroga cerealella,"NA",Cos [Europe],P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Aglossa dimidiata,1930s,"Pal, Ori",P,Cross-check Koitahashi (1937) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Cadra cautella,1920s,Cos,P (indoor),Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",In
+Lepidoptera,Pyralidae,Ephestia elutella,"NA",Cos,P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Paralipsa gularis,"NA","Pal, Ori",P,Cross-check Paik (1982) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Parapediasia teterrella,2003,Nea,P*,Sohn (2007),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Plodia interpunctella,1910s,Cos [India],P,Cross-check Kazui (1919) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Pyralidae,Pyralis farinalis,1930s,Cos,P,Cross-check Nakayama (1934b) and Kiritani (2002),"NA","Hong, 2012",Out
+Lepidoptera,Arctidae,Hyphantria cunea,1958,"Pal, Nea [USA]",P,Lee (1996; Appendix I); NPQS (2010b),"NA","Hong, 2012",Out
+Lepidoptera,Noctuidae,Autographa gamma,"NA",Pal [Europe],P*,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Lepidoptera,Noctuidae,Peridroma saucia,1997,Cos,P*,NPQS (2010b),"NA","Hong, 2012",Out
+Lepidoptera,Pieridae,Pieris rapae,"NA",Cos,P,Lee (1996; Appendix I),"NA","Hong, 2012",Out
+Coleoptera,Nitidulidae,Aethina tumida,2016,Afr,"NA",Choi et al 2016,"NA","Hong, 2012",Out
+Lepidoptera,Plutellidae,Plutella xylostella,"NA","NA","NA","NA","NA","Hong, 2012",Out
+Coleoptera,Curculionidae,Hylurgus ligniperda,1999,NA,NA,NA,NA,"Park, 2017",NA
+Coleoptera,Curculionidae,Sitophilus oryzae,2015,NA,NA,NA,NA,"Hong, 2018",NA
+Hemiptera,Tingidae,Corythucha marmorata,2011,NA,NA,NA,NA,"Yoon, 2013",NA
+Hemiptera,Pseudococcidae,Planococcus minor,2010,NA,NA,NA,NA,"Lee, 2016",NA
+Coleoptera,Dermestidae,Reesa vespulae,2014,NA,NA,NA,NA,"Hong, 2014",NA
+Hemiptera,Ricaniidae,Pochazia shantungensis,2012,NA,NA,NA,NA,"Lee, 2016",NA
+Coleoptera,Chrysomelidae,Sagra femorata,2011,NA,NA,NA,NA,"Lee, 2017",NA
+Hymenoptera,Vespidae,Vespa velutina nigrithorax,2006,NA,NA,NA,NA,"Lee, 2018",NA
+Diptera,Cecidomyiidae,Dasineura oxycoccana,2010,NA,NA,NA,NA,"Lee, 2019",NA
+Diptera,Agromyzidae,Liriomyza sativae,2014,NA,NA,NA,NA,"Lee, 2020",NA
