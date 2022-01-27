@@ -9,9 +9,11 @@ library(tidyverse) ; library(readxl) ; library(purrr) ; library(countrycode) ; l
 library(here)
 library(googledrive) # authenticate to the Google account which can access the shared team drive
 
+# devtools::install_github("reblake/insectcleanr")  - RT: failed as I don't have rtools and it doesn't appear in the CRAN reporsitory?
 # source the custom functions if they aren't in your R environment
 #source("nfs_data/custom_taxonomy_funcs.R")
 library(insectcleanr)
+
 
 ####################################
 # List all the raw data files 
@@ -111,6 +113,7 @@ df_occurr <- occurr_list %>%
 
 # add the unique ID column and delete genus species column(s)
 tax_table <- read.csv(here("taxonomy_table.csv"), stringsAsFactors=F)  # read in the taxonomy table
+tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishments/Old_files/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
 
 # make final occurrence dataframe
 occurr_df <- df_occurr %>%
