@@ -5,7 +5,8 @@
 ####################################################################
 
 # Load packages needed for this script
-library(tidyverse) ; library(readxl) ; library(purrr) ; library(DescTools) ; library(here)
+library(tidyverse) ; library(readxl) ; library(purrr) ; library(DescTools) 
+library(stringr) ; library(here)
 library(googledrive) # authenticate to the Google account which can access the shared team drive
 
 
