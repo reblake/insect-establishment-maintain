@@ -6,7 +6,7 @@
 
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(purrr) ; library(countrycode) ; library(DescTools)
-library(here)
+library(stringr) ; library(here)
 library(googledrive) # authenticate to the Google account which can access the shared team drive
 
 # source the custom functions if they aren't in your R environment
