@@ -4,16 +4,16 @@
 ##### created by Rachael Blake    11/19/2018                   #####
 ####################################################################
 
+# updated 28 Jan 2022
+
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(purrr) ; library(countrycode) ; library(DescTools)
-library(here)
+library(stringr) ; library(here)
 library(googledrive) # authenticate to the Google account which can access the shared team drive
 
-# devtools::install_github("reblake/insectcleanr")  - RT: failed as I don't have rtools and it doesn't appear in the CRAN reporsitory?
 # source the custom functions if they aren't in your R environment
 #source("nfs_data/custom_taxonomy_funcs.R")
 library(insectcleanr)
-
 
 ####################################
 # List all the raw data files 
@@ -90,7 +90,8 @@ df_occurr <- occurr_list %>%
          year = gsub("\\s", "", year, perl=TRUE)) %>% 
   # clean up eradicated
   mutate(eradicated = ifelse(eradicated %in% c("Na"), NA_character_, eradicated),
-         eradicated = ifelse(intentional_release == "Eradicated", "Yes", eradicated)) %>% 
+         eradicated = ifelse(eradicated %in% c("Yes","pending"), "Yes", eradicated),
+         eradicated = ifelse(!is.na(intentional_release)&(intentional_release == "Eradicated"), "Yes",eradicated),) %>% 
   # clean up intentional release column
   mutate(intentional_release = ifelse(intentional_release %in% c("N", "Eradicated"), "No", 
                                       ifelse(intentional_release %in% c("1", "I", "Y"), "Yes", intentional_release))) %>% 
@@ -113,6 +114,7 @@ df_occurr <- occurr_list %>%
 
 # add the unique ID column and delete genus species column(s)
 tax_table <- read.csv(here("taxonomy_table.csv"), stringsAsFactors=F)  # read in the taxonomy table
+
 tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishments/Old_files/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
 
 # make final occurrence dataframe
