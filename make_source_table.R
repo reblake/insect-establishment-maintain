@@ -7,16 +7,24 @@
 
 # Load packages needed for this script
 library(tidyverse) ; library(readxl) ; library(purrr) ; library(countrycode) ; library(DescTools)
-library(here)
+library(stringr); library(here)
 library(googledrive) # authenticate to the Google account which can access the shared team drive
 
 # source the custom functions if they aren't in your R environment
 # source("nfs_data/custom_taxonomy_funcs.R")
-library(insectcleanr)
+# library(insectcleanr) loaded in my function folder
+source("temporary_insectcleanr_functions.R")
 
-# List all the data files # RT 21/01/22 this needs to be edited right?
+# List all the data files 
 # file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
-# file_listp <- paste0("nfs_data/data/raw_data/raw_by_country/", file_list)         # adds path to file names
+# file_listp <- paste0("./raw_data_files/", file_list)         # adds path to file names
+
+####################################
+# List all the raw data files 
+# Raw data files on Google Drive Shared Drive called "SESYNC Insect Invasions"
+####################################
+# file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
+# file_listp <- paste0("./raw_data_files/", file_list)         # adds path to file names
 # store the folder url 
 folder_url <- "https://drive.google.com/drive/folders/1WD7yqnmKEJc8PK-lNmwHniEuwl-xqIby"
 # identify this folder on Drive ; let googledrive know this is a file ID or URL, as opposed to file name
@@ -26,7 +34,7 @@ file_list <- drive_ls(folder, type = "csv")
 # create new empty directory in working directory
 if (file.exists("raw_data_files")) {cat("The folder already exists.")
 } else {
-dir.create(file.path(here(), "raw_data_files"))
+  dir.create(file.path(here(), "raw_data_files"))
 }
 # make vector of file destination full paths
 dest_paths <- paste0(here(), "/raw_data_files/", file_list$name)
@@ -34,7 +42,7 @@ dest_paths <- paste0(here(), "/raw_data_files/", file_list$name)
 walk2(file_list$id, dest_paths, ~ drive_download(as_id(.x), overwrite = TRUE, 
                                                  path = .y))
 # make list of files to send to the functions below
-file_listp <- paste0("./raw_data_files/", file_list$name)
+file_listp <- paste0("./raw_data_files/", file_list$name) 
 
 
 #####################################
@@ -42,7 +50,7 @@ file_listp <- paste0("./raw_data_files/", file_list$name)
 #####################################
 
 # apply that function over the list of dataframes
-source_list <- lapply(file_listp, separate_source) 
+source_list <- lapply(file_listp, separate_source_csv) 
 
 # put all occurrence dataframes into one large dataframe
 df_source <- source_list %>% 
@@ -50,6 +58,8 @@ df_source <- source_list %>%
              mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% # remove rogue white spaces
              # remove Arachnid
              filter(!(genus_species == "Trixacarus caviae")) %>% 
+             # tidy source, any NA should be "Tba" to be advised
+             mutate(source = ifelse(is.na(source) , "Tba", source))%>%
              # clean up year
              mutate(year = ifelse(year == -999, NA, year)) %>% # RT 21/01/2022 these is more to do here
              # clean up some species names
@@ -61,8 +71,9 @@ df_source <- source_list %>%
                     year = gsub("\\s", "", year, perl=TRUE)) %>% 
              # clean up eradicated
              mutate(eradicated = ifelse(eradicated %in% c("Na"), NA_character_, eradicated),
-                    eradicated = ifelse(intentional_release == "Eradicated", "Yes", eradicated)) %>%  
-             # clean up intentional release column
+                    eradicated = ifelse(eradicated %in% c("Yes","pending"), "Yes", eradicated),
+                    eradicated = ifelse(!is.na(intentional_release)&(intentional_release == "Eradicated"), "Yes",eradicated),) %>% 
+               # clean up intentional release column
              mutate(intentional_release = ifelse(intentional_release %in% c("N", "0","Eradicated"), "No", # RT edited
                                           ifelse(intentional_release %in% c("1", "I", "Y"), "Yes", intentional_release))) %>% 
              mutate(intentional_release = ifelse(intentional_release %in% c("Na"), NA_character_, intentional_release)) %>% 
@@ -72,11 +83,13 @@ df_source <- source_list %>%
 # add the unique ID column and delete genus species column(s) # RT different
 tax_table <- read.csv("nfs_data/data/clean_data/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
 
-# make final source dataframe
+tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishments/Old_files/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
+
+# make final source dataframe 
 source_df <- df_source %>%
              mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl = TRUE)) %>%  # remove rogue white spaces
              dplyr::rename(user_supplied_name = genus_species) %>% # have to rename genus_species to user_supplied_name so matches are correct
-             dplyr::right_join(y = select(tax_table, c(user_supplied_name, genus_species,family, order,rank)), # RT changed to right join - should have all source rows
+             dplyr::left_join(y = select(tax_table, c(user_supplied_name, genus_species,family, order,rank)), # RT changed to right join - should have all source rows
                                by = "user_supplied_name") %>% # join in the taxonomy info
              mutate(genus_species = gsub("<a0>", " ", genus_species, perl=TRUE)) %>% 
              select(user_supplied_name, genus_species, family, order,rank, year, region, 
@@ -88,10 +101,8 @@ source_df <- df_source %>%
 
 source_df2 <- source_df %>% 
               # remove ">" and other characters from year column
-              mutate(year = gsub("\\D", "", year, perl = TRUE))
-
-##### NOTE: there were no cases where there were different entries for intentional release in a
-##### given genus_species/region combo
+              mutate(year = gsub("\\D", "", year, perl = TRUE))%>%
+              mutate(year = ifelse(year == "", NA, year))
 
 
 #####################################
