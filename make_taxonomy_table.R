@@ -107,6 +107,11 @@ tax_acc <- tax_acc_l %>%
            mutate(genus_species = str_squish(genus_species)) %>% 
            select(-one_of(xtra_cols))
 )
+########
+# taxa that went missing in the code 
+mia_s <- c(setdiff(tax_acc$user_supplied_name, tax_vec_sp), 
+           setdiff(tax_vec_sp, tax_acc$user_supplied_name))
+
 
 ######################
 # apply the get_accepted_taxonomy function over the vector of genus names
@@ -119,7 +124,10 @@ gen_acc <- gn_acc_l %>%
            mutate(genus_species = str_squish(genus_species)) %>% 
            select(-one_of(xtra_cols))
 )
-
+########
+# taxa that went missing in the code 
+mia_g <- c(setdiff(gen_acc$user_supplied_name, tax_vec_gn), 
+           setdiff(tax_vec_gn, gen_acc$user_supplied_name))
 
 ######################
 # resolve species without accepted species names
@@ -147,6 +155,12 @@ tax_go <- tax_go_l %>%
                  genus_species = ifelse(is.na(species), paste(genus, "sp"), species)) %>% 
           select(-matched_name2)
 )
+########
+# taxa that went missing in the code 
+# this is equivalent to no_lower below
+mia_g <- c(setdiff(tax_go$user_supplied_name, go_vec), 
+           setdiff(go_vec, tax_go$user_supplied_name))
+
 
 # # send the species rank back through GBIF to identify synonyms
 # synon_l <- lapply(tax_go$genus_species, get_accepted_taxonomy)
@@ -208,6 +222,11 @@ tax_nf <- tax_nf_l %>%
           mutate(genus = ifelse(is.na(genus), stringr::word(species, 1), genus)) %>% 
           select(-matched_name2)
 )
+########
+# taxa that went missing in the code 
+# this is equivalent to no_lower below
+mia_g <- c(setdiff(tax_nf$user_supplied_name, not_found_vec), 
+           setdiff(not_found_vec, tax_nf$user_supplied_name))
 
 # How many were not found? 
 suppressMessages(
@@ -341,6 +360,12 @@ tax_final <- tax_combo %>%
              mutate(genus = ifelse(is.na(genus), word(genus_species, 1), genus),
                     species = ifelse(is.na(species), genus_species, species)) %>% 
              arrange(user_supplied_name) 
+
+########
+# taxa that went missing in the code 
+# this is equivalent to no_lower below
+mia_all <- c(setdiff(tax_final$user_supplied_name, tax_df1$genus_species), 
+             setdiff(tax_df1$genus_species, tax_final$user_supplied_name))
 
 # duplicates
 # dups <- tax_final %>% group_by(user_supplied_name) %>% filter(n()>1)
