@@ -362,9 +362,8 @@ tax_final <- tax_combo %>%
 
 ########
 # taxa that went missing in the code 
-# this is equivalent to no_lower below
-# mia_all <- c(setdiff(tax_final$user_supplied_name, tax_df1$genus_species), 
-#              setdiff(tax_df1$genus_species, tax_final$user_supplied_name))
+mia_all <- c(setdiff(tax_final$user_supplied_name, tax_df1$genus_species),
+             setdiff(tax_df1$genus_species, tax_final$user_supplied_name))
 
 # duplicates
 # dups <- tax_final %>% group_by(user_supplied_name) %>% filter(n()>1)
