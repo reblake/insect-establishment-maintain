@@ -158,8 +158,8 @@ tax_go <- tax_go_l %>%
 ########
 # taxa that went missing in the code 
 # this is equivalent to no_lower below
-mia_g <- c(setdiff(tax_go$user_supplied_name, go_vec), 
-           setdiff(go_vec, tax_go$user_supplied_name))
+mia_go <- c(setdiff(tax_go$user_supplied_name, go_vec), 
+            setdiff(go_vec, tax_go$user_supplied_name))
 
 
 # # send the species rank back through GBIF to identify synonyms
@@ -224,9 +224,8 @@ tax_nf <- tax_nf_l %>%
 )
 ########
 # taxa that went missing in the code 
-# this is equivalent to no_lower below
-mia_g <- c(setdiff(tax_nf$user_supplied_name, not_found_vec), 
-           setdiff(not_found_vec, tax_nf$user_supplied_name))
+mia_nf <- c(setdiff(tax_nf$user_supplied_name, not_found_vec), 
+            setdiff(not_found_vec, tax_nf$user_supplied_name))
 
 # How many were not found? 
 suppressMessages(
@@ -364,8 +363,8 @@ tax_final <- tax_combo %>%
 ########
 # taxa that went missing in the code 
 # this is equivalent to no_lower below
-mia_all <- c(setdiff(tax_final$user_supplied_name, tax_df1$genus_species), 
-             setdiff(tax_df1$genus_species, tax_final$user_supplied_name))
+# mia_all <- c(setdiff(tax_final$user_supplied_name, tax_df1$genus_species), 
+#              setdiff(tax_df1$genus_species, tax_final$user_supplied_name))
 
 # duplicates
 # dups <- tax_final %>% group_by(user_supplied_name) %>% filter(n()>1)
