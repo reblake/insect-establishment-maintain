@@ -1,8 +1,11 @@
-####################################################################
-##### Insect Invasions Pursuit @ SESYNC                        #####
-##### Example script to create clean occurrence table          #####
-##### created by Rachael Blake    11/19/2018                   #####
-####################################################################
+#######################################################################
+##### Insect Invasions Pursuit @ SESYNC                           #####
+##### Example script to create clean occurrence table             #####
+##### which is analysis ready:                                    #####
+##### contains no duplicates of genus_species region combinations #####
+##### only contains columns which have been curated               #####
+##### based on code created by Rachael Blake    11/19/2018        #####
+#######################################################################
 
 # RT: I've made some edits to make this work on my computor.
 # RT: the purpose of this file is to check that the script runs smoothly on my computor
@@ -50,68 +53,34 @@ file_listp <- paste0("./raw_data_files/", file_list$name)
 
 # apply that function over the list of dataframes
 occurr_list <- lapply(file_listp, separate_occurrence_csv) 
+tax_class<-c("genus_species","year","eradicated","intentional_release","region","established_indoors_or_outdoors")
 
 # put all occurrence dataframes into one large dataframe
 df_occurr <- occurr_list %>% 
   purrr::reduce(full_join) %>% 
   mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl=TRUE)) %>% # remove rogue white spaces
+  select(tidyselect::one_of(tax_class)) %>%
   # remove Arachnid
   filter(!(genus_species == "Trixacarus caviae")) %>% 
-  # add blank country and present_status columns because they were removed in edits of the raw data files (Aug 14, 2020)
-  mutate(country = '',
-         present_status = '') %>% 
-  # fill in country column with canada_or_us info
-  mutate(country = ifelse(is.na(country) & canada_or_us %in% c("Canada", "Us", "Us, may not actually be adventive"), 
-                          canada_or_us, country),
-         present_status = ifelse(present_status == "Na", NA, present_status),
-         notes = ifelse(country == "Us, may not actually be adventive", "may not actually be adventive", ""),
-         country = ifelse(country == "Us, may not actually be adventive", "Us", country) ,
-         notes = ifelse(origin == "New insect record for 1960  purposeful introduction", 
-                        "New insect record for 1960  purposeful introduction", ""),
-         origin = ifelse(origin == "New insect record for 1960  purposeful introduction",
-                         "", origin),
-         notes = ifelse(origin == "New insect record for 1963, chance immigrant", 
-                        "New insect record for 1963, chance immigrant", ""),
-         origin = ifelse(origin == "New insect record for 1963, chance immigrant",
-                         "", origin)
-  ) %>% 
   # clean up/fill in country column
-  mutate(year = ifelse(year == -999, NA, year),
-         country = ifelse(region %in% c("Okinawa", "Ogasawara", "Japan"), "Japan", country),
-         country = ifelse(region == "Hawaii", "Us", country),
-         country = ifelse(region == "Korea", "Korea", country),
-         country = ifelse(region == "New Zealand", "New Zealand", country) ,
-         notes = ifelse(grepl("Proceedings of the", .$origin), origin, notes),
-         origin = ifelse(grepl("Proceedings of the", .$origin), "", origin)
-  ) %>% 
+  mutate(year = ifelse(year == -999, NA, year),) %>% 
   # clean up some species names
   mutate(genus_species = gsub("  ", " ", genus_species),
          genus_species = gsub("Mycetophila\xa0propria", "Mycetophila propria", genus_species),
          genus_species = gsub("Mycetophila\xa0vulgaris", "Mycetophila vulgaris", genus_species),
          genus_species = gsub("Mycetophila\xa0marginepunctata", "Mycetophila marginepunctata", genus_species),
-  ) %>%         
+         genus_species = ifelse(genus_species == "Xylocoris", "Xylocoris sp", genus_species)) %>%         
   # clean up year column
   mutate(year = ifelse(year %in% c("N/A", "Na"), NA_character_, year),
          year = gsub("\\s", "", year, perl=TRUE)) %>% 
   # clean up eradicated
   mutate(eradicated = ifelse(eradicated %in% c("Na"), NA_character_, eradicated),
-         eradicated = ifelse(intentional_release == "Eradicated", "Yes", eradicated)) %>% 
+         eradicated = ifelse(eradicated %in% c("Yes","pending"), "Yes", eradicated),
+         eradicated = ifelse(!is.na(intentional_release)&(intentional_release == "Eradicated"), "Yes",eradicated),) %>% 
   # clean up intentional release column
-  mutate(intentional_release = ifelse(intentional_release %in% c("N", "Eradicated"), "No", 
+  mutate(intentional_release = ifelse(intentional_release %in% c("N","0", "Eradicated"), "No", 
                                       ifelse(intentional_release %in% c("1", "I", "Y"), "Yes", intentional_release))) %>% 
   mutate(intentional_release = ifelse(intentional_release %in% c("Na"), NA_character_, intentional_release)) %>% 
-  # clean up ecozone
-  mutate(ecozone = ifelse(ecozone %in% c("Na"), NA_character_, ecozone)) %>% 
-  # clean up origin column
-  mutate(origin = ifelse(origin %in% c("Na"), NA_character_, origin)) %>%
-  # clean up confirmed establishment
-  mutate(confirmed_establishment = ifelse(confirmed_establishment %in% c("Na"), NA_character_, confirmed_establishment)) %>% 
-  # clean up host type
-  mutate(host_type = str_to_lower(host_type)) %>% 
-  # add country codes for country and origin columns
-  # mutate(country_code = countrycode(country, "country.name", "iso3n", warn = TRUE),
-  #        origin_code = countrycode(origin, "country.name", "iso3n", warn = TRUE)
-  #        ) %>% 
   mutate(genus_species = gsub("\xa0", " ", genus_species , perl=TRUE)) %>% # trying to get rid of weird characters
   # dplyr::select(-canada_or_us, -nz_region) %>% 
   dplyr::arrange(genus_species) 
@@ -125,35 +94,46 @@ tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/SESYNC/SE
 occurr_df <- df_occurr %>%
   mutate_all(~gsub("(*UCP)\\s\\+|\\W+$", "", . , perl = TRUE)) %>%  # remove rogue white spaces
   dplyr::rename(user_supplied_name = genus_species) %>% # have to rename genus_species to user_supplied_name so matches are correct
-  dplyr::left_join(y = select(tax_table, c(user_supplied_name, genus_species)),
+  dplyr::left_join(y = select(tax_table, c(user_supplied_name, genus_species,rank)),
                    by = "user_supplied_name") %>% # join in the taxonomy info
   mutate(genus_species = gsub("<a0>", " ", genus_species, perl=TRUE)) %>% 
-  select(user_supplied_name, genus_species, year, region, ecozone,
-         intentional_release, established_indoors_or_outdoors, confirmed_establishment,
-         eradicated, present_status, host_type, 
-         country, origin,  # RT deleted country_code and origin code
-         notes
+  select(user_supplied_name, genus_species, year, region, rank,
+         intentional_release, established_indoors_or_outdoors,
+         eradicated
   ) %>% # make taxon_id column the first column; arrange other columns
   dplyr::arrange(user_supplied_name) # order by taxon_id
 
 
 occurr_df2 <- occurr_df %>% 
   # remove ">" and other characters from year column
-  mutate(year = gsub("\\D", "", year, perl = TRUE)) %>% 
+  mutate(year = gsub("\\D", "", year, perl = TRUE),year = gsub("pre", "", year, perl = TRUE)) %>% 
   # take out duplicates in the genus_species/region columns
   group_split(genus_species, region) %>% 
-  map(~coalesce_occur(.x)) %>% # RT: what is the coalesce_occur function?
+  map(~coalesce_occur_analysis(.x)) %>% # RT: what is the coalesce_occur function?
   bind_rows() 
 
 ##### NOTE: there were no cases where there were different entries for intentional release in a
 ##### given genus_species/region combo
+occurr_df3<-occurr_df2[!is.na(occurr_df2$genus_species),] #13308
 
+#checks
+temp<-distinct(occurr_df3[,c("genus_species","region")]) # 13308 - no replicates?
+temp<-occurr_df3
+temp$uni<-paste(temp$genus_species,temp$region)
+combo<-temp$uni
+counts<-table(temp$uni)
+counts[counts>1]
+temp<-occurr_df
+temp$uni<-paste(temp$genus_species,temp$region)
+counts<-table(temp$uni)
+counts[counts>1]
+check<-setdiff(temp$uni,combo) # just the NAs
 
 #####################################
 ### Write file                    ###
 #####################################
 # write the clean occurrence table to a CSV file
-readr::write_csv(occurr_df2, paste0(here(), "/occurrence_table_", Sys.Date(), ".csv"))
+readr::write_csv(occurr_df3, paste0(here(), "/occurrence_table_analysis_ready_", Sys.Date(), ".csv"))
 
 
 

@@ -113,7 +113,7 @@ source_df3<-distinct(source_df2) # getting rid of duplicate rows.
 ### Write file                    ###
 #####################################
 # write the clean occurrence table to a CSV file
-readr::write_csv(source_df2, paste0(here(), "/source_table_", Sys.Date(), ".csv")) # need to change route
+readr::write_csv(source_df3, paste0(here(), "/source_table_", Sys.Date(), ".csv")) # need to change route
 
 
 
