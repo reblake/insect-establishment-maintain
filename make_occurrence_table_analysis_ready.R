@@ -135,7 +135,25 @@ check<-setdiff(temp$uni,combo) # just the NAs
 # write the clean occurrence table to a CSV file
 readr::write_csv(occurr_df3, paste0(here(), "/occurrence_table_analysis_ready_", Sys.Date(), ".csv"))
 
+#####################
+# make occurrence_table_analysis_ready_col_lep
+tax_tableCL <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/SESYNC/SESYNC_Repos/insect-establishment-maintain/taxonomy_table_cole_lep_2022-02-10.csv", stringsAsFactors=F)
+# check, this should only differ by family names
+# some differences in special characters!
+tax_col<-c("user_supplied_name","rank","genus_species","family","order")
+temp<-setdiff(tax_tableCL[,tax_col],tax_table[,tax_col])
+occurr_df3_CL<-left_join(occurr_df3,distinct(tax_tableCL[tax_tableCL$rank%in%c("species","genus"),c("rank","genus_species","family","order")]),by="genus_species")
+
+readr::write_csv(occurr_df3_CL, paste0(here(), "/occurrence_table_analysis_ready_ColLep", Sys.Date(), ".csv"))
 
 
 
+##################################################
+# stats on difference with previous establishment table:
 
+EstOld<-read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishment2021April15ColLep.csv",stringsAsFactors = FALSE)
+
+sp<-unique(occurr_df3_CL$genus_species)
+new_sp<-unique(setdiff(occurr_df3_CL$genus_species,EstOld$genus_species)) # 794
+removed_sp<-unique(setdiff(EstOld$genus_species,occurr_df3_CL$genus_species)) # 371
+Net_add_sp<-length(unique(occurr_df3_CL$genus_species))-length(unique(EstOld$genus_species))

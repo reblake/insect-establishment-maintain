@@ -8,13 +8,15 @@
 library(tidyverse) ; library(readxl)
 
 ### load taxonomy table
-tax_table <- read_csv("nfs_data/data/clean_data/taxonomy_table.csv")
+#tax_table <- read_csv("nfs_data/data/clean_data/taxonomy_table.csv")
+tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/SESYNC/SESYNC_Repos/insect-establishment-maintain/taxonomy_table_2022-02-10.csv", stringsAsFactors=F)
+
 
 ### load Coleoptera fixes
-coleop_fixes <- read_excel("nfs_data/data/raw_data/taxonomic_reference/Coleoptera_family_synonyms.xlsx")
+coleop_fixes <- read_excel("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/taxonomic_references/Coleoptera_family_synonyms.xlsx")
 
 ### load Lepidoptera fixes
-lepi_fixes <- read_csv("nfs_data/data/raw_data/taxonomic_reference/Lep_genus_family_transfers.csv") %>% 
+lepi_fixes <- read_csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/taxonomic_references/Lep_genus_family_transfers.csv") %>% 
               dplyr::rename(family_lep = family)
 
 ### merge Coleoptera fixes with taxonomy table
@@ -39,6 +41,6 @@ tt_col_lep <- tt_col %>%
 ### Write file                    ###
 #####################################
 # write the clean taxonomy table to a CSV file
-readr::write_csv(tt_col_lep, "nfs_data/data/clean_data/taxonomy_table_cole_lep.csv")
+readr::write_csv(tt_col_lep, paste0(here(), "/taxonomy_table_cole_lep_", Sys.Date(), ".csv"))
 
 
