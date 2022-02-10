@@ -12,8 +12,8 @@ library(googledrive) # authenticate to the Google account which can access the s
 
 # source the custom functions if they aren't in your R environment
 # source("nfs_data/custom_taxonomy_funcs.R")
-# library(insectcleanr) loaded in my function folder
-source("temporary_insectcleanr_functions.R")
+library(insectcleanr) # loaded in my function folder
+# source("temporary_insectcleanr_functions.R")
 
 # List all the data files 
 # file_list <- dir(path="nfs_data/data/raw_data/raw_by_country", pattern='*.xlsx')  # makes list of the files
@@ -63,9 +63,11 @@ df_source <- source_list %>%
              # clean up year
              mutate(year = ifelse(year == -999, NA, year)) %>% # RT 21/01/2022 these is more to do here
              # clean up some species names
-             mutate(genus_species = gsub("Mycetophila\xa0propria", "Mycetophila propria", genus_species),
+             mutate(genus_species = gsub("  ", " ", genus_species),
+                    genus_species = gsub("Mycetophila\xa0propria", "Mycetophila propria", genus_species),
                     genus_species = gsub("Mycetophila\xa0vulgaris", "Mycetophila vulgaris", genus_species),
-                    genus_species = gsub("Mycetophila\xa0marginepunctata", "Mycetophila marginepunctata", genus_species)) %>%         
+                    genus_species = gsub("Mycetophila\xa0marginepunctata", "Mycetophila marginepunctata", genus_species),
+                    genus_species = ifelse(genus_species == "Xylocoris", "Xylocoris sp", genus_species)) %>%         
              # clean up year column
              mutate(year = ifelse(year %in% c("N/A", "Na"), NA_character_, year),
                     year = gsub("\\s", "", year, perl=TRUE)) %>% 
@@ -80,10 +82,11 @@ df_source <- source_list %>%
              mutate(genus_species = gsub("\xa0", " ", genus_species , perl=TRUE)) %>% # trying to get rid of weird characters
              dplyr::arrange(genus_species) 
 
-# add the unique ID column and delete genus species column(s) # RT different
-tax_table <- read.csv("nfs_data/data/clean_data/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
 
-tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishments/Old_files/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
+# add the unique ID column and delete genus species column(s) # RT different
+tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/SESYNC/SESYNC_Repos/insect-establishment-maintain/taxonomy_table_2022-02-10.csv", stringsAsFactors=F)  # read in the taxonomy table
+
+# tax_table <- read.csv("C:/Users/TurnerR/OneDrive - scion/Data/Raw_Data/Establishments/Old_files/taxonomy_table.csv", stringsAsFactors=F)  # read in the taxonomy table
 
 # make final source dataframe 
 source_df <- df_source %>%
@@ -104,6 +107,7 @@ source_df2 <- source_df %>%
               mutate(year = gsub("\\D", "", year, perl = TRUE))%>%
               mutate(year = ifelse(year == "", NA, year))
 
+source_df3<-distinct(source_df2) # getting rid of duplicate rows.
 
 #####################################
 ### Write file                    ###
