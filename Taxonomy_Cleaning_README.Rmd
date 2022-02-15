@@ -38,9 +38,11 @@ cat(paste0("GBIF Secretariat. 2019. GBIF Backbone Taxonomy. Checklist dataset ht
 
 ### Other databases
 ```{r other_databases, echo=FALSE}
-db_list <- c("Catalogue of Life", "Wikispecies", "ITIS", "NCBI", "The Interim Register of Marine and Nonmarine Genera", "	Encyclopedia of Life",
+db_list <- c("Catalogue of Life", "Wikispecies", "ITIS", "NCBI", 
+             "The Interim Register of Marine and Nonmarine Genera", "	Encyclopedia of Life",
              "Aphid Species File", "Index to Organism Names", "uBio NameBank")
-db_info <- subset(gnr_datasources(), title %in% db_list) 
+db_ids <- c(1,2,3,4,8,12,152,168,169)
+db_info <- subset(gnr_datasources(), id %in% db_ids) 
 print.data.frame(db_info %>% select(id, title, updated_at), row.names = FALSE) 
 ```
 

@@ -151,15 +151,19 @@ tax_go <- tax_go_l %>%
           dplyr::filter(!(matched_name2 == "species not found")) %>% # remove taxa that didn't provide a species-level match (no new info)
           dplyr::filter((str_count(matched_name2, '\\s+')+1) %in% c(2,3)) %>% 
           mutate(genus = ifelse((str_count(matched_name2, '\\s+')+1) == 1, matched_name2, stringr::word(matched_name2, 1)),
-                 species = ifelse((str_count(matched_name2, '\\s+')+1) %in% c(2,3), matched_name2, NA_character_),
-                 genus_species = ifelse(is.na(species), paste(genus, "sp"), species)) %>% 
+                 species = ifelse((str_count(matched_name2, '\\s+')+1) %in% c(2,3), matched_name2, NA_character_)#,
+                 # genus_species = ifelse(is.na(species), paste(genus, "sp"), species)
+                 ) %>% 
           select(-matched_name2)
 )
 ########
 # taxa that went missing in the code 
-# this is equivalent to no_lower below
-mia_go <- c(setdiff(tax_go$user_supplied_name, go_vec), 
-            setdiff(go_vec, tax_go$user_supplied_name))
+suppressMessages(
+tax_go_all <- tax_go_l %>% 
+              purrr::reduce(full_join)
+)
+mia_go <- c(setdiff(tax_go_all$user_supplied_name, go_vec), 
+            setdiff(go_vec, tax_go_all$user_supplied_name))
 
 
 # # send the species rank back through GBIF to identify synonyms
